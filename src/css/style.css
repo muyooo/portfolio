@@ -10,6 +10,13 @@ body {
 .wrapper {
   display: flex;
   justify-content: center;
+  visibility: visible;
+  opacity: 1;
+  transition: 1.5s;
+}
+html:not(.wf-active) .wrapper--hidden {
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* -------------------------------------------------------------
