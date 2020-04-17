@@ -7,3 +7,37 @@ body {
   font-family: fot-tsukuardgothic-std, sans-serif;
   font-weight: 400;
 }
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* -------------------------------------------------------------
+ * WORKS
+ * ------------------------------------------------------------- */
+.works {
+  width: 39.2%;
+  max-width: 47rem;
+  padding-right: 4rem;
+}
+
+/* -------------------------------------------------------------
+ * MAIN-NAV
+ * ------------------------------------------------------------- */
+.main-nav {
+  width: 21.6%;
+  height: 100vh;
+  max-width: 27rem;
+  margin: 0 .1rem;
+  padding: 4rem;
+  box-shadow: 0 0 .2rem 0 #c8c8c8;
+}
+
+/* -------------------------------------------------------------
+ * MAIN-NAV
+ * ------------------------------------------------------------- */
+.about {
+  width: 39.2%;
+  max-width: 47rem;
+  padding-left: 4rem;
+}
