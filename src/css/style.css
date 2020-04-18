@@ -26,6 +26,16 @@ html:not(.wf-active) .wrapper--hidden {
   width: 39.2%;
   max-width: 47rem;
   padding-right: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.works__backtext {
+  font-size: 7rem;
+  color: #ebebeb;
+  border-top: .1rem solid #ebebeb;
+  border-bottom: .1rem solid #ebebeb;
+  padding: 1rem .5rem;
 }
 
 /* -------------------------------------------------------------
@@ -41,10 +51,20 @@ html:not(.wf-active) .wrapper--hidden {
 }
 
 /* -------------------------------------------------------------
- * MAIN-NAV
+ * ABOUT
  * ------------------------------------------------------------- */
 .about {
   width: 39.2%;
   max-width: 47rem;
   padding-left: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about__backtext {
+  font-size: 7rem;
+  color: #ebebeb;
+  border-top: .1rem solid #ebebeb;
+  border-bottom: .1rem solid #ebebeb;
+  padding: 1rem .5rem;
 }
