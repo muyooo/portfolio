@@ -14,6 +14,47 @@ function changeIconLinkPreviewing() {
     iconLinkList.classList.remove(iconLinkListHidden);
   }
 }
+// -- Move Navigation
+function moveNavigation(linkButtons, linkButtonsLen, target) {
+  var targetType = target.getAttribute('data-type'),
+      activeClass = 'main-nav__link-button--active';
+  // Remove all active classes and add active class to target
+  for(var i = 0; i < linkButtonsLen; i++) {
+    linkButtons[i].classList.remove(activeClass);
+  }
+  target.classList.add(activeClass);
+  // Get contents query
+  var mainContentClasses = ['works', 'main-nav', 'about'],
+      mainContentClassesLen = mainContentClasses.length,
+      mainContentQuery = '';
+  for(var i = 0; i < mainContentClassesLen; i++) {
+    mainContentQuery += '.' + mainContentClasses[i];
+    if(i != mainContentClassesLen - 1) {
+      mainContentQuery += ',';
+    }
+  }
+  // Get section query
+  var mainContents = document.querySelectorAll(mainContentQuery),
+      mainContentsLen = mainContents.length;
+  for(var i = 0; i < mainContentsLen; i++) {
+    var targetSection = mainContents[i],
+        targetSectionClass = mainContentClasses[i];
+    targetSection.className = '';
+    targetSection.classList.add(targetSectionClass);
+  }
+  var emphasisClass = targetType + '--emphasis',
+      works = mainContents[0],
+      top = mainContents[1],
+      about = mainContents[2];
+  if(targetType == 'works') {
+    works.classList.add(emphasisClass);
+    about.classList.add('about--hidden');
+  } else if(targetType == 'top') {
+  } else if(targetType == 'about') {
+    about.classList.add(emphasisClass);
+    works.classList.add('works--hidden');
+  }
+}
 
 {
   /* ------------------------------ */
@@ -42,4 +83,14 @@ function changeIconLinkPreviewing() {
       changeIconLinkPreviewing();
     }, resizeWait);
   });
+  // -- Click link buttons
+  var linkButtons = document.querySelectorAll('.main-nav__link-button'),
+      linkButtonsLen = linkButtons.length;
+  for(var i = 0; i < linkButtonsLen; i++) {
+    var target = linkButtons[i];
+    target.addEventListener('click', function(e) {
+      moveNavigation(linkButtons, linkButtonsLen, e.target);
+    });
+  }
+  
 }

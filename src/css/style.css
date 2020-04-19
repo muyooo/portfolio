@@ -29,6 +29,21 @@ html:not(.wf-active) .wrapper--hidden {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
+  opacity: 1;
+  transition: .7s;
+}
+.works--emphasis {
+  width: 78.4%;
+  max-width: 94rem;
+  transition: .7s;
+}
+.works--hidden {
+  width: 0;
+  padding: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: .7s;
 }
 .works__backtext {
   font-size: 7rem;
@@ -125,6 +140,21 @@ html:not(.wf-active) .wrapper--hidden {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
+  opacity: 1;
+  transition: .7s;
+}
+.about--emphasis {
+  width: 78.4%;
+  max-width: 94rem;
+  transition: .7s;
+}
+.about--hidden {
+  width: 0;
+  padding: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: .7s;
 }
 .about__backtext {
   font-size: 7rem;
