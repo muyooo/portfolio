@@ -97,6 +97,14 @@ html:not(.wf-active) .wrapper--hidden {
   position: absolute;
   bottom: 4rem;
   left: 4rem;
+  visibility: visible;
+  opacity: 1;
+  transition: .3s;
+}
+.main-nav__icon-link-list--hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
 }
 .main-nav__icon-link:not(:first-of-type) {
   margin-left: 3rem;
