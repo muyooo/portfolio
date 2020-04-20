@@ -48,6 +48,8 @@ function moveNavigation(linkButtons, linkButtonsLen, target) {
       about = mainContents[2],
       worksBackText = document.querySelector('.works__backtext'),
       worksBackTextHidden = 'works__backtext--hidden',
+      worksList = document.querySelector('.works__list'),
+      worksListHidden = 'works__list--hidden',
       aboutProfile = document.querySelector('.about__profile'),
       aboutProfileHidden = 'about__profile--hidden',
       aboutBackText = document.querySelector('.about__backtext'),
@@ -55,10 +57,12 @@ function moveNavigation(linkButtons, linkButtonsLen, target) {
   aboutBackText.classList.remove(aboutBackTextHidden);
   worksBackText.classList.remove(worksBackTextHidden);
   aboutProfile.classList.add(aboutProfileHidden);
+  worksList.classList.add(worksListHidden);
   if(targetType == 'works') {
     about.classList.add('about--hidden');
     worksBackText.classList.add(worksBackTextHidden);
     works.classList.add(emphasisClass);
+    worksList.classList.remove(worksListHidden);
   } else if(targetType == 'top') {
     
   } else if(targetType == 'about') {
@@ -67,6 +71,14 @@ function moveNavigation(linkButtons, linkButtonsLen, target) {
     aboutBackText.classList.add(aboutBackTextHidden);
     aboutProfile.classList.remove(aboutProfileHidden);
   }
+}
+// -- Works sort
+function worksSort(worksSortButtons, worksSortButtonsLen, target) {
+  var activeClass = 'works__sort--active';
+  for(var i = 0; i < worksSortButtonsLen; i++) {
+    worksSortButtons[i].classList.remove(activeClass);
+  }
+  target.classList.add(activeClass);
 }
 
 {
@@ -103,6 +115,15 @@ function moveNavigation(linkButtons, linkButtonsLen, target) {
     var target = linkButtons[i];
     target.addEventListener('click', function(e) {
       moveNavigation(linkButtons, linkButtonsLen, e.target);
+    });
+  }
+  // -- Click works sort button
+  var worksSortButtons = document.querySelectorAll('.works__sort'),
+      worksSortButtonsLen = worksSortButtons.length;
+  for(var i = 0; i < worksSortButtonsLen; i++) {
+    var target = worksSortButtons[i];
+    target.addEventListener('click', function(e) {
+      worksSort(worksSortButtons, worksSortButtonsLen, e.target);
     });
   }
   
