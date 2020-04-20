@@ -64,6 +64,9 @@ html:not(.wf-active) .wrapper--hidden {
 .works__list--hidden {
   display: none;
 }
+.works__nav {
+  margin-bottom: 4rem;
+}
 .works__nav-list {
   width: 100%;
   display: flex;
@@ -83,6 +86,41 @@ html:not(.wf-active) .wrapper--hidden {
   color: #88b5d3;
   border-color: #88b5d3;
   transition: .3s;
+}
+.works__contents {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.works__work {
+  width: 43rem;
+  height: 12rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  padding: 1.5rem 1.5rem 1.5rem 13.5rem;
+  color: #787878;
+  margin-bottom: 4rem;
+  line-height: 1.43;
+}
+.works__work--01 {background-image: url(../image/works_list_01.jpg);}
+.works__work--02 {background-image: url(../image/works_list_02.jpg);}
+.works__work--03 {background-image: url(../image/works_list_03.jpg);}
+.works__work--04 {background-image: url(../image/works_list_04.jpg);}
+.works__work--05 {background-image: url(../image/works_list_05.jpg);}
+.works__work-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: .1rem dashed #c8c8c8;
+  letter-spacing: .1rem;
+}
+.works__work-caption {
+  font-size: 1.2rem;
+}
+.works__work-description {
+  letter-spacing: .03rem;
 }
 
 /* -------------------------------------------------------------
