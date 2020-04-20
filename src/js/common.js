@@ -45,14 +45,27 @@ function moveNavigation(linkButtons, linkButtonsLen, target) {
   var emphasisClass = targetType + '--emphasis',
       works = mainContents[0],
       top = mainContents[1],
-      about = mainContents[2];
+      about = mainContents[2],
+      worksBackText = document.querySelector('.works__backtext'),
+      worksBackTextHidden = 'works__backtext--hidden',
+      aboutProfile = document.querySelector('.about__profile'),
+      aboutProfileHidden = 'about__profile--hidden',
+      aboutBackText = document.querySelector('.about__backtext'),
+      aboutBackTextHidden = 'about__backtext--hidden';
+  aboutBackText.classList.remove(aboutBackTextHidden);
+  worksBackText.classList.remove(worksBackTextHidden);
+  aboutProfile.classList.add(aboutProfileHidden);
   if(targetType == 'works') {
-    works.classList.add(emphasisClass);
     about.classList.add('about--hidden');
+    worksBackText.classList.add(worksBackTextHidden);
+    works.classList.add(emphasisClass);
   } else if(targetType == 'top') {
+    
   } else if(targetType == 'about') {
     about.classList.add(emphasisClass);
     works.classList.add('works--hidden');
+    aboutBackText.classList.add(aboutBackTextHidden);
+    aboutProfile.classList.remove(aboutProfileHidden);
   }
 }
 

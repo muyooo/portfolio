@@ -147,7 +147,10 @@ html:not(.wf-active) .wrapper--hidden {
 .about--emphasis {
   width: 78.4%;
   max-width: 94rem;
-  transition: .7s;
+  padding-top: 4rem;
+  justify-content: start;
+  align-items: start;
+  transition: .7s, padding 0s;
 }
 .about--hidden {
   width: 0;
@@ -162,4 +165,40 @@ html:not(.wf-active) .wrapper--hidden {
   border-top: .1rem solid #ebebeb;
   border-bottom: .1rem solid #ebebeb;
   padding: 1rem .5rem;
+}
+.about__backtext--hidden {
+  display: none;
+}
+.about__profile--hidden {
+  display: none;
+}
+.about__image {
+  width: 18rem;
+}
+.about__profile-image {
+  width: 100%;
+}
+.about__detail {
+  color: #787878;
+  border-collapse: separate;
+  border-spacing: 0 2.6rem;
+  letter-spacing: .1rem;
+}
+.about__headline {
+  width: 8.0rem;
+  font-weight: 400;
+  text-align: right;
+  padding-right: 1.6rem;
+  border-right: .1rem solid #b4b4b4;
+}
+.about__text {
+  padding-left: 1.6rem;
+  line-height: 1.85;
+}
+.about__link {
+  color: #88b5d3;
+  text-decoration: none;
+}
+.about__caption {
+  font-size: 1rem;
 }
