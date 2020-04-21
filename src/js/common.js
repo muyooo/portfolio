@@ -74,11 +74,27 @@ function moveNavigation(linkButtons, linkButtonsLen, target) {
 }
 // -- Works sort
 function worksSort(worksSortButtons, worksSortButtonsLen, target) {
+  // Change active button
   var activeClass = 'works__sort--active';
   for(var i = 0; i < worksSortButtonsLen; i++) {
     worksSortButtons[i].classList.remove(activeClass);
   }
   target.classList.add(activeClass);
+  // Sort works
+  var works = document.querySelectorAll('.works__work'),
+      worksLen = works.length,
+      worksHidden = 'works__work--hidden';
+  for(var i = 0; i < worksLen; i++) {
+    works[i].classList.remove(worksHidden);
+  }
+  var targetType = target.getAttribute('data-type');
+  for(var i = 0; i < worksLen; i++) {
+    var targetWork = works[i],
+        targetWorkType = targetWork.getAttribute('data-type');
+    if(targetType != targetWorkType && targetType != 'all') {
+      targetWork.classList.add(worksHidden);
+    }
+  }
 }
 
 {

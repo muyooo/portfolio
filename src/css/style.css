@@ -103,6 +103,9 @@ html:not(.wf-active) .wrapper--hidden {
   margin-bottom: 4rem;
   line-height: 1.43;
 }
+.works__work--hidden {
+  display: none;
+}
 .works__work--01 {background-image: url(../image/works_list_01.jpg);}
 .works__work--02 {background-image: url(../image/works_list_02.jpg);}
 .works__work--03 {background-image: url(../image/works_list_03.jpg);}
