@@ -6,6 +6,7 @@ body {
   font-size: 1.4rem;
   font-family: fot-tsukuardgothic-std, sans-serif;
   font-weight: 400;
+  overflow: hidden;
 }
 .wrapper {
   display: flex;
@@ -131,29 +132,34 @@ html:not(.wf-active) .wrapper--hidden {
   top: 0;
   left: 0;
   background-color: #fff;
-  width: 90rem;
-  height: 54.1rem;
+  height: calc(100vh - 10.1rem);
 }
 .works__close {
   font-size: 1.2rem;
   color: #88b5d3;
   border-bottom: .1rem solid #88b5d3;
-  padding: 0 1.6rem .8rem 0;
+  padding: 4rem 1.6rem .8rem 0;
   margin-bottom: 4rem;
   text-align: right;
   cursor: pointer;
-  position: relative;
+  z-index: 30;
+  position: fixed;
+  top: 0;
+  background: #fff;
 }
 .works__close::after {
   content: '';
   position: absolute;
-  top: .2rem;
+  bottom: .9rem;
   right: .2rem;
   width: .6rem;
   height: .9rem;
   background-image: url(../image/icon_arrow.svg);
   background-size: cover;
   background-repeat: no-repeat;
+}
+.works__detail--hidden {
+  display: none;
 }
 .works__detail__contents {
   width: 100%;
@@ -162,8 +168,38 @@ html:not(.wf-active) .wrapper--hidden {
 }
 .works__detail__images {
   width: 65.555555%;
-  margin-right: 4.444445%;
+  margin: 6rem 4.444445% 3rem 0;
   height: 100%;
+}
+.works__detail__link--movie {
+  position: relative;
+  display: block;
+}
+.works__detail__link--movie::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 1.2rem);
+  background: rgba(0,0,0,.6);
+  z-index: 10;
+}
+.works__detail__link--movie::after {
+  content: '';
+  width: 7rem;
+  height: 8.35rem;
+  background-image: url(../image/icon_movie.png);
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+.works__detail__link:hover {
+  opacity: .9;
+  transition: .1s;
 }
 .works__detail__image {
   width: 100%;
@@ -175,23 +211,25 @@ html:not(.wf-active) .wrapper--hidden {
 }
 .works__detail__text {
   width: 30%;
-  height: calc(100vh - 10.1rem);
   position: relative;
 }
 .works__detail__text-box {
-  position: absolute;
+  position: fixed;
   bottom: 2.4rem;
-  left: 0;
-  width: 100%;
 }
 .works__detail__title {
   font-size: 1.8rem;
+  font-weight: 400;
   padding-bottom: 1.5rem;
   margin: 0 0 1.5rem;
   border-bottom: .1rem dashed #c8c8c8;
 }
+.works__detail__title-note {
+  font-size: 1.2rem;
+}
 .works__detail__description {
   height: 3.8rem;
+  line-height: 1.5;
   margin-bottom: .4rem;
 }
 .works__features {
@@ -206,6 +244,7 @@ html:not(.wf-active) .wrapper--hidden {
 }
 .works__feature-description {
   padding-left: 1.5rem;
+  line-height: 1.5;
 }
 
 /* -------------------------------------------------------------
