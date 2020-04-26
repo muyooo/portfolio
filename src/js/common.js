@@ -131,8 +131,8 @@ function worksPreview(index) {
       description: '編集にこだわったスプラトゥーン2の動画。',
       img: [
         ['http://img.youtube.com/vi/pQUVEnf0Dww/mqdefault.jpg','https://youtu.be/pQUVEnf0Dww','works__detail__link--movie'],
-        ['http://img.youtube.com/vi/Rbo54P33xOk/maxresdefault.jpg','https://youtu.be/Rbo54P33xOk','works__detail__link--movie'],
-        ['http://img.youtube.com/vi/jCCkJzC_aBg/maxresdefault.jpg','https://youtu.be/jCCkJzC_aBg','works__detail__link--movie']
+        ['http://img.youtube.com/vi/Rbo54P33xOk/mqdefault.jpg','https://youtu.be/Rbo54P33xOk','works__detail__link--movie'],
+        ['http://img.youtube.com/vi/jCCkJzC_aBg/mqdefault.jpg','https://youtu.be/jCCkJzC_aBg','works__detail__link--movie']
       ],
       imgCaption: [
         '傘4人組で行くリーグマッチ!! Part7',
