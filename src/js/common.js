@@ -109,18 +109,22 @@ function worksPreview(index) {
       descriptions: [
         'Illustrator ／ Photoshop',
         '2019/04'
-      ]
+      ],
+      otherTitle: '',
+      otherContent: ''
     },
     {
       title: 'むょーのロゴ',
       description: 'むょーという語感の柔らかさを表現したロゴ。',
-      img: [['image/works_02_img01.jpg']],
+      img: ['image/works_02_img01.jpg'],
       imgCaption: [''],
       imgAlt: ['むょーロゴ'],
       descriptions: [
         'Illustrator',
         '2019/07'
-      ]
+      ],
+      otherTitle: '',
+      otherContent: ''
     },
     {
       title: 'スプラトゥーンの動画',
@@ -145,7 +149,7 @@ function worksPreview(index) {
         '2019/06〜08'
       ],
       otherTitle: ['提供先'],
-      otherContent: ['<a href="https://www.youtube.com/channel/UCUSqstO8xWN9WD5OxqtvkoQ" target="_blank" rel="noreffer noopener">ねこたんチャンネル</a>']
+      otherContent: ['<a class="works__feature-link" href="https://www.youtube.com/channel/UCUSqstO8xWN9WD5OxqtvkoQ" target="_blank" rel="noreffer noopener">ねこたんチャンネル</a>']
     },
     {
       title: 'イチジクありがとうカード<span class="works__detail__title-note">(2019)</span>',
@@ -167,6 +171,8 @@ function worksPreview(index) {
         'Illustrator',
         '2019/10'
       ],
+      otherTitle: '',
+      otherContent: ''
     },
     {
       title: '飲み会ポイント',
@@ -188,7 +194,7 @@ function worksPreview(index) {
         '2020/03〜開発中'
       ],
       otherTitle: ['開発物'],
-      otherContent: ['<a href="">最初の試作</a>']
+      otherContent: ['<a class="works__feature-link" href="">最初の試作</a>']
     }
   ];
   // Set details
@@ -239,6 +245,29 @@ function worksPreview(index) {
     var workDescription = work.descriptions[i];
     workDescriptions[i].innerHTML = workDescription;
   }
+  // Set other descriptions
+  var workOtherTitles = work.otherTitle,
+      workOtherContents = work.otherContent,
+      workOtherTitlesLen = workOtherTitles.length;
+  for(var i = 0; i < workOtherTitlesLen; i++) {
+    var targetTitle = workOtherTitles[i];
+    if(targetTitle != null) {
+      var targetContent = workOtherContents[i],
+          worksFeatures = document.querySelector('.works__features'),
+          worksFeature = document.createElement('tr'),
+          worksFeatureTitle = document.createElement('th'),
+          worksFeatureContent = document.createElement('td');
+      worksFeature.classList.add('works__feature');
+      worksFeature.classList.add('works__feature-other');
+      worksFeatureTitle.classList.add('works__feature-title');
+      worksFeatureTitle.innerHTML = targetTitle;
+      worksFeature.appendChild(worksFeatureTitle);
+      worksFeatureContent.classList.add('works__feature-description');
+      worksFeatureContent.innerHTML = targetContent;
+      worksFeature.appendChild(worksFeatureContent);
+      worksFeatures.appendChild(worksFeature);
+    }
+  }
   // Preview details
   var workDetailHidden = 'works__detail--hidden';
   workDetail.classList.remove(workDetailHidden);
@@ -261,6 +290,12 @@ function worksPreview(index) {
         removeImageContentsLen = removeImageContents.length;
     for(var i = 0; i < removeImageContentsLen; i++) {
       workImages.removeChild(removeImageContents[i]);
+    }
+    var worksFeatures = document.querySelector('.works__features'),
+        removeOtherFeatures = worksFeatures.querySelectorAll('.works__feature-other'),
+        removeOtherFeaturesLen = removeOtherFeatures.length;
+    for(var i = 0; i < removeOtherFeaturesLen; i++) {
+      worksFeatures.removeChild(removeOtherFeatures[i]);
     }
   });
 }

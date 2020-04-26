@@ -132,7 +132,7 @@ html:not(.wf-active) .wrapper--hidden {
   top: 0;
   left: 0;
   background-color: #fff;
-  height: calc(100vh - 10.1rem);
+  height: calc(100vh - 4rem);
 }
 .works__close {
   font-size: 1.2rem;
@@ -209,6 +209,9 @@ html:not(.wf-active) .wrapper--hidden {
   color: #787878;
   margin-bottom: 3rem;
 }
+.works__detail__image-caption:last-of-type {
+  margin-bottom: 1rem;
+}
 .works__detail__text {
   width: 30%;
   position: relative;
@@ -245,6 +248,9 @@ html:not(.wf-active) .wrapper--hidden {
 .works__feature-description {
   padding-left: 1.5rem;
   line-height: 1.5;
+}
+.works__feature-link {
+  color: #88b5d3;
 }
 
 /* -------------------------------------------------------------
