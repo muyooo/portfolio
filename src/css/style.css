@@ -324,6 +324,7 @@ html:not(.wf-active) .wrapper--hidden {
 .main-nav__icon-link:not(:first-of-type) {
   margin-left: 3rem;
 }
+.main-nav__icon-link--github {width: 3.3rem;}
 .main-nav__icon-link--note {width: 2.8rem;}
 .main-nav__icon-link--blog {width: 3.2rem;}
 .main-nav__icon-link__logo {
