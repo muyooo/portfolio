@@ -193,8 +193,8 @@ function worksPreview(index) {
         'Visual Studio Code<br>Git（ターミナル）',
         '2020/03〜開発中'
       ],
-      otherTitle: ['開発物'],
-      otherContent: ['<a class="works__feature-link" href="">最初の試作</a>']
+      otherTitle: ['リンク'],
+      otherContent: ['<a class="works__feature-link" href="https://note.com/muyooo/n/nc8d15d554bfa?magazine_key=mdfbc6d9e2326" target="_blank" rel="noopener noreferrer">開発日誌</a><br><a class="works__feature-link" href="">最初の試作</a>']
     }
   ];
   // Set details
