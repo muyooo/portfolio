@@ -58,14 +58,14 @@ function moveNavigation(linkButtons, linkButtonsLen, target) {
   worksBackText.classList.remove(worksBackTextHidden);
   aboutProfile.classList.add(aboutProfileHidden);
   worksList.classList.add(worksListHidden);
+  updateUrlHash(targetType);
   if(targetType == 'works') {
     about.classList.add('about--hidden');
     worksBackText.classList.add(worksBackTextHidden);
-
     works.classList.add(emphasisClass);
     worksList.classList.remove(worksListHidden);
   } else if(targetType == 'top') {
-    
+    updateUrlHash('');
   } else if(targetType == 'about') {
     about.classList.add(emphasisClass);
     works.classList.add('works--hidden');
@@ -297,11 +297,21 @@ function worksPreview(index) {
     for(var i = 0; i < removeOtherFeaturesLen; i++) {
       worksFeatures.removeChild(removeOtherFeatures[i]);
     }
+    updateUrlHash('works');
   });
+  // Update URL hash
+  var hashNum = index + 1,
+      targetHash = 'work' + ('0' + hashNum).slice(-2);
+  updateUrlHash(targetHash);
 }
 // -- Return rem value
 function getRemValue(num) {
   return num / 10 + 'rem';
+}
+// -- Update URL hash
+function updateUrlHash(targetHash) {
+  targetHash = '#' + targetHash;
+  location.hash = targetHash;
 }
 {
   /* ------------------------------ */
