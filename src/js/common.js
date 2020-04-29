@@ -317,6 +317,23 @@ function getRemValue(num) {
   window.addEventListener('load', function() {
     changeIconLinkPreviewing();
   });
+  // -- ID link page transition
+  var pageUrl = location.href,
+      pageUrlID = pageUrl.replace(/.*\/.*\#/, ''),
+      pageUrlID = pageUrlID.replace(/\?.*/, ''),
+      linkButtons = document.querySelectorAll('.main-nav__link-button'),
+      linkButtonsLen = linkButtons.length;
+  if(pageUrlID.indexOf('work') != -1) {
+    // Works transition
+    var workIdNum = Number( pageUrlID.replace(/work/, '') ) - 1;
+    moveNavigation(linkButtons, linkButtonsLen, linkButtons[2]);
+    if(!isNaN(workIdNum)) {
+      worksPreview(workIdNum);
+    }
+  } else if(pageUrlID.indexOf('about') != -1) {
+    // About transition
+    moveNavigation(linkButtons, linkButtonsLen, linkButtons[1]);
+  }
 
   /* ------------------------------ */
   /* User Interaction               */
@@ -331,8 +348,6 @@ function getRemValue(num) {
     }, resizeWait);
   });
   // -- Click link buttons
-  var linkButtons = document.querySelectorAll('.main-nav__link-button'),
-      linkButtonsLen = linkButtons.length;
   for(var i = 0; i < linkButtonsLen; i++) {
     var target = linkButtons[i];
     target.addEventListener('click', function(e) {
