@@ -344,6 +344,9 @@
   } else if(pageUrlID.indexOf('about') != -1) {
     // About transition
     moveNavigation(linkButtons, linkButtonsLen, linkButtons[1]);
+  } else if(pageUrl.slice(-1) == '#') {
+    var notIdUrl = pageUrl.replace(/\#/, '');
+    location.href = notIdUrl;
   }
 
   /* ------------------------------ */
