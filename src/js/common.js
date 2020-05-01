@@ -3,6 +3,18 @@
   /* ------------------------------ */
   /* Functions                      */
   /* ------------------------------ */
+  // -- JSON loading
+  var xhr = new XMLHttpRequest(),
+      worksData;
+  xhr.open('GET', 'js/works.json');
+  xhr.responseType = 'json';
+  xhr.send();
+  xhr.onload = function() {
+    worksData = xhr.response.works;
+  }
+  xhr.onerror = function() {
+    alert("作品情報が読み込めませんでした。サイトを更新しても状況が改善されない場合、。");
+  }
   // -- Toggle preview icon-link
   function changeIconLinkPreviewing() {
     var currentWindowHeight = window.innerHeight,
@@ -100,104 +112,6 @@
   }
   // -- Works preview
   function worksPreview(index) {
-    var worksData = [
-      {
-        title: 'スプラトゥーンの名刺',
-        description: 'スプラトゥーン仲間を募集するために作った名刺。',
-        img: ['image/works_01_img01.jpg'],
-        imgCaption: [''],
-        imgAlt: ['スプラトゥーンの名刺'],
-        descriptions: [
-          'Illustrator ／ Photoshop',
-          '2019/04'
-        ],
-        otherTitle: '',
-        otherContent: ''
-      },
-      {
-        title: 'むょーのロゴ',
-        description: 'むょーという語感の柔らかさを表現したロゴ。',
-        img: ['image/works_02_img01.jpg'],
-        imgCaption: [''],
-        imgAlt: ['むょーロゴ'],
-        descriptions: [
-          'Illustrator',
-          '2019/07'
-        ],
-        otherTitle: '',
-        otherContent: ''
-      },
-      {
-        title: 'スプラトゥーンの動画',
-        description: 'Youtubeに提供するために編集したスプラトゥーン2の動画。',
-        img: [
-          ['http://img.youtube.com/vi/pQUVEnf0Dww/mqdefault.jpg','https://youtu.be/pQUVEnf0Dww','works__detail__link--movie'],
-          ['http://img.youtube.com/vi/Rbo54P33xOk/mqdefault.jpg','https://youtu.be/Rbo54P33xOk','works__detail__link--movie'],
-          ['http://img.youtube.com/vi/jCCkJzC_aBg/mqdefault.jpg','https://youtu.be/jCCkJzC_aBg','works__detail__link--movie']
-        ],
-        imgCaption: [
-          '傘4人組で行くリーグマッチ!! Part7',
-          '傘4人組で行くリーグマッチ!! Part6',
-          '傘4人組で行くリーグマッチ!! Part5'
-        ],
-        imgAlt: [
-          '傘4人組で行くリーグマッチ!! Part7 のサムネ画像',
-          '傘4人組で行くリーグマッチ!! Part6 のサムネ画像',
-          '傘4人組で行くリーグマッチ!! Part5 のサムネ画像'
-        ],
-        descriptions: [
-          'After Effects',
-          '2019/06〜08'
-        ],
-        otherTitle: ['提供先'],
-        otherContent: ['<a class="works__feature-link" href="https://www.youtube.com/channel/UCUSqstO8xWN9WD5OxqtvkoQ" target="_blank" rel="noreffer noopener">ねこたんチャンネル</a>']
-      },
-      {
-        title: 'イチジクありがとうカード<span class="works__detail__title-note">(2019)</span>',
-        description: 'イチジク農家がイチジク購入者に送るありがとうカード。',
-        img: [
-          'image/works_04_img01.jpg',
-          'image/works_04_img02.jpg',
-          'image/works_04_img03.jpg',
-          'image/works_04_img04.jpg'
-        ],
-        imgCaption: ['','','','表面／裏面のデザイン'],
-        imgAlt: [
-          'ありがとうカードイメージ',
-          '封筒からのぞくありがとうカード',
-          'ありがとうカードの表裏イメージ',
-          'ありがとうカードの表裏デザイン'
-        ],
-        descriptions: [
-          'Illustrator',
-          '2019/10'
-        ],
-        otherTitle: '',
-        otherContent: ''
-      },
-      {
-        title: '飲み会ポイント',
-        description: '飲み会を断るためのWebサービス。',
-        img: [
-          'image/works_05_img01.jpg',
-          'image/works_05_img02.jpg'
-        ],
-        imgCaption: [
-          '開発日誌の記事ヘッダー。',
-          '最初の試作。'
-        ],
-        imgAlt: [
-          '開発日誌の記事ヘッダー。',
-          '最初の試作'
-        ],
-        descriptions: [
-          'Visual Studio Code<br>Git（ターミナル）',
-          '2020/03〜開発中'
-        ],
-        otherTitle: ['リンク'],
-        otherContent: ['<a class="works__feature-link" href="https://note.com/muyooo/n/nc8d15d554bfa?magazine_key=mdfbc6d9e2326" target="_blank" rel="noopener noreferrer">開発日誌</a><br><a class="works__feature-link" href="dev/beerpoint_first_mocup/index.html">最初の試作</a>']
-      }
-    ];
     // Set details
     var work = worksData[index],
         workDetail = document.querySelector('.works__detail'),
