@@ -115,6 +115,8 @@
     // Set details
     var work = worksData[index],
         workDetail = document.querySelector('.works__detail'),
+        workContents = document.querySelector('.works__contents'),
+        workContentsHidden = 'works__contents--hidden',
         workTitle = document.querySelector('.works__detail__title'),
         workDescription = document.querySelector('.works__detail__description'),
         workImages = document.querySelector('.works__detail__images');
@@ -183,6 +185,8 @@
         worksFeatures.appendChild(worksFeature);
       }
     }
+    // Hide work contents
+    workContents.classList.add(workContentsHidden);
     // Preview details
     var workDetailHidden = 'works__detail--hidden';
     workDetail.classList.remove(workDetailHidden);
@@ -200,6 +204,7 @@
     closeWorkButton.style.width = getRemValue(worksListWidth);
     closeWorkButton.addEventListener('click', function() {
       workDetail.classList.add(workDetailHidden);
+      workContents.classList.remove(workContentsHidden);
       // Remove detail contents
       var removeImageContents = workImages.querySelectorAll('.works__detail__image:not(.works__detail__image--link), .works__detail__image-caption, .works__detail__link'),
           removeImageContentsLen = removeImageContents.length;

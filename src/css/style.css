@@ -94,6 +94,9 @@ html:not(.wf-active) .wrapper--hidden {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.works__contents--hidden {
+  display: none;
+}
 .works__work {
   width: 43rem;
   height: 12rem;
