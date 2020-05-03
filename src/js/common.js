@@ -11,6 +11,9 @@
   xhr.send();
   xhr.onload = function() {
     worksData = xhr.response.works;
+    var workContents = document.querySelector('.works__contents'),
+        workContentsHidden = 'works__contents--hidden';
+    workContents.classList.remove(workContentsHidden);
   }
   xhr.onerror = function() {
     alert("作品情報が読み込めませんでした。");
