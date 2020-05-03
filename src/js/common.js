@@ -204,7 +204,7 @@
     // Set close button
     var closeWorkButton = document.querySelector('.works__close');
     closeWorkButton.style.width = getRemValue(worksListWidth);
-    closeWorkButton.addEventListener('click', function() {
+    function closeWorkDetail() {
       workDetail.classList.add(workDetailHidden);
       workContents.classList.remove(workContentsHidden);
       // Remove detail contents
@@ -220,6 +220,12 @@
         worksFeatures.removeChild(removeOtherFeatures[i]);
       }
       updateUrlHash('works');
+    }
+    closeWorkButton.addEventListener('click', function() {
+      closeWorkDetail();
+    });
+    window.addEventListener('resize', function() {
+      closeWorkDetail();
     });
     // Update URL hash
     var hashNum = index + 1,
