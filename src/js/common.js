@@ -13,12 +13,14 @@
     worksData = xhr.response.works;
   }
   xhr.onerror = function() {
-    alert("作品情報が読み込めませんでした。サイトを更新しても状況が改善されない場合、。");
+    alert("作品情報が読み込めませんでした。");
   }
   // -- Toggle preview icon-link
   function changeIconLinkPreviewing() {
     var currentWindowHeight = window.innerHeight,
-        enablePreviewHeight = 700,
+        currentWindowWidth = window.innerWidth,
+        firstBreakPoint = 1280,
+        enablePreviewHeight = currentWindowWidth < firstBreakPoint ? 600 : 700,
         iconLinkList = document.querySelector('.main-nav__icon-link-list'),
         iconLinkListHidden = 'main-nav__icon-link-list--hidden';
     if(currentWindowHeight < enablePreviewHeight) {
