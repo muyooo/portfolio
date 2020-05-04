@@ -26,6 +26,7 @@ html:not(.wf-active) .wrapper--hidden {
 .works {
   width: 39.2%;
   max-width: 47rem;
+  height: 100vh;
   padding-right: 4rem;
   display: flex;
   justify-content: center;
@@ -407,6 +408,7 @@ html:not(.wf-active) .wrapper--hidden {
 .about {
   width: 39.2%;
   max-width: 47rem;
+  height: 100vh;
   padding-left: 4rem;
   display: flex;
   justify-content: center;
