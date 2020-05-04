@@ -5,15 +5,14 @@
   /* ------------------------------ */
   // -- JSON loading
   var xhr = new XMLHttpRequest(),
-      worksData;
+      worksData,
+      worksLoadFlag = false;
   xhr.open('GET', 'js/works.json');
   xhr.responseType = 'json';
   xhr.send();
   xhr.onload = function() {
     worksData = xhr.response.works;
-    var workContents = document.querySelector('.works__contents'),
-        workContentsHidden = 'works__contents--hidden';
-    workContents.classList.remove(workContentsHidden);
+    worksLoadFlag = true;
   }
   xhr.onerror = function() {
     alert("作品情報が読み込めませんでした。");
@@ -313,6 +312,10 @@
   for(var i = 0; i < worksPreviewButtonsLen; i++) {
     var target = worksPreviewButtons[i];
     target.addEventListener('click', function(e) {
+      if(!worksLoadFlag) {
+        alert('作品情報の読み込みまでお待ちください。');
+        return;
+      }
       var eTarget = e.target,
           worksPreviewButtonsArray = [].slice.call(worksPreviewButtons),
           targetIndex = worksPreviewButtonsArray.indexOf(eTarget) != -1 ? worksPreviewButtonsArray.indexOf(eTarget) : worksPreviewButtonsArray.indexOf(eTarget.parentNode),
