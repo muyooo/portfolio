@@ -19,6 +19,11 @@ html:not(.wf-active) .wrapper--hidden {
   visibility: hidden;
   opacity: 0;
 }
+@media screen and (max-width: 56.25rem) {
+  .wrapper {
+    flex-direction: column;
+  }
+}
 
 /* -------------------------------------------------------------
  * WORKS
@@ -34,6 +39,14 @@ html:not(.wf-active) .wrapper--hidden {
   overflow: auto;
   opacity: 1;
   transition: .7s;
+}
+@media screen and (max-width: 56.25rem) {
+  .works {
+    width: 100%;
+    max-width: 100%;
+    height: 39.5vh;
+    padding: 2.99850075vh;
+  }
 }
 .works--emphasis {
   width: 78.4%;
@@ -56,6 +69,12 @@ html:not(.wf-active) .wrapper--hidden {
   border-top: .1rem solid #ebebeb;
   border-bottom: .1rem solid #ebebeb;
   padding: 1rem .5rem;
+}
+@media screen and (max-width: 56.25rem) {
+  .works__backtext {
+    font-size: 3.5rem;
+    letter-spacing: .3rem;
+  }
 }
 .works__backtext--hidden {
   display: none;
@@ -304,13 +323,43 @@ html:not(.wf-active) .wrapper--hidden {
   box-shadow: 0 0 .2rem 0 #c8c8c8;
   position: relative;
 }
+@media screen and (max-width: 56.25rem) {
+  .main-nav {
+    width: 100%;
+    max-width: 100%;
+    height: 21vh;
+    padding: 2.99850075vh 0 2.248875562vh;
+    margin: 0;
+    box-shadow: 0 0 .4rem 0 #c8c8c8;
+  }
+}
 .main-nav__title {
   width: 100%;
   max-width: 19rem;
   margin-bottom: 1rem;
 }
+@media screen and (max-width: 56.25rem) {
+  .main-nav-sp__titles {
+    display: flex;
+    margin-bottom: .449775112vh;
+    padding: 0 2.99850075vh;
+  }
+  .main-nav__title {
+    width: 10.344827586vh;
+    max-width: 10.344827586vh;
+    margin-bottom: 0;
+    display: inline-block;
+  }
+}
 .main-nav__logo {
   width: 100%;
+}
+@media screen and (max-width: 56.25rem) {
+  .main-nav-sp__descriptions {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.3988006vh;
+  }
 }
 .main-nav__subtitle {
   font-size: 2.8rem;
@@ -327,6 +376,14 @@ html:not(.wf-active) .wrapper--hidden {
     margin-bottom: 2rem;
   }
 }
+@media screen and (max-width: 56.25rem) {
+  .main-nav__subtitle {
+    font-size: 2.3988006vh;
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-bottom: 1.499250375vh;
+  }
+}
 .main-nav__description {
   font-size: 1.4rem;
   margin-bottom: 4rem;
@@ -340,6 +397,19 @@ html:not(.wf-active) .wrapper--hidden {
     margin-bottom: 2.5rem;
     letter-spacing: .03rem;
     line-height: 2rem;
+  }
+}
+@media screen and (max-width: 56.25rem) {
+  .main-nav__description {
+    font-size: 1.649175412vh;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 56.25rem) {
+  .main-nav__link-list {
+    display: flex;
+    justify-content: space-between;
   }
 }
 .main-nav__link-button {
@@ -368,6 +438,34 @@ html:not(.wf-active) .wrapper--hidden {
 .main-nav__link-button--active::after {
   content: url(../image/icon_arrow_active.svg);
 }
+@media screen and (max-width: 56.25rem) {
+  .main-nav__link-button {
+    width: calc(100vw / 3);
+    font-size: 1.949025487vh;
+    text-align: center;
+    padding: 2.248875562vh 0 2.99850075vh;
+    border: none;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .main-nav__link-button:not(:last-of-type)::before {
+    content: "";
+    width: .1rem;
+    height: 5.097451274vh;
+    background: #88b5d3;
+    position: absolute;
+    top: 1.499250375vh;
+    right: 0;
+  }
+  .main-nav__link-button::after {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: .59970015vh;
+    margin: 0 auto;
+    transform: rotate(90deg) scale(.8);
+  }
+}
 .main-nav__icon-link-list {
   display: flex;
   position: absolute;
@@ -376,6 +474,14 @@ html:not(.wf-active) .wrapper--hidden {
   visibility: visible;
   opacity: 1;
   transition: .3s;
+}
+@media screen and (max-width: 56.25rem) {
+  .main-nav__icon-link-list {
+    top: 2.248875562vh;
+    bottom: auto;
+    left: auto;
+    right: 2.99850075vh;
+  }
 }
 .main-nav__icon-link-list--hidden {
   visibility: hidden;
@@ -417,6 +523,14 @@ html:not(.wf-active) .wrapper--hidden {
   opacity: 1;
   transition: .7s;
 }
+@media screen and (max-width: 56.25rem) {
+  .about {
+    width: 100%;
+    max-width: 100%;
+    height: 39.5vh;
+    padding: 2.99850075vh;
+  }
+}
 .about--emphasis {
   width: 78.4%;
   max-width: 94rem;
@@ -438,6 +552,12 @@ html:not(.wf-active) .wrapper--hidden {
   border-top: .1rem solid #ebebeb;
   border-bottom: .1rem solid #ebebeb;
   padding: 1rem .5rem;
+}
+@media screen and (max-width: 56.25rem) {
+  .about__backtext {
+    font-size: 3.5rem;
+    letter-spacing: .3rem;
+  }
 }
 .about__backtext--hidden {
   display: none;
