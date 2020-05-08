@@ -196,16 +196,17 @@
     workDetail.classList.remove(workDetailHidden);
     // Set works-detail width
     var worksList = document.querySelector('.works__list'),
-        worksListWidth = worksList.offsetWidth;
-    workDetail.style.width = getRemValue(worksListWidth)
+        worksListWidth = worksList.offsetWidth,
+        currentWindowWidth = window.innerWidth;
+    workDetail.style.width = currentWindowWidth >= 900 ? getRemValue(worksListWidth) : "";
     // Set text-box width
     var workText = document.querySelector('.works__detail__text'),
         workTextWidth = workText.offsetWidth,
         workTextBox = document.querySelector('.works__detail__text-box');
-    workTextBox.style.width = getRemValue(workTextWidth);
+    workTextBox.style.width = currentWindowWidth >= 900 ? getRemValue(workTextWidth) : "";
     // Set close button
     var closeWorkButton = document.querySelector('.works__close');
-    closeWorkButton.style.width = getRemValue(worksListWidth);
+    closeWorkButton.style.width = currentWindowWidth >= 900 ? getRemValue(worksListWidth) : "";
     function closeWorkDetail() {
       workDetail.classList.add(workDetailHidden);
       workContents.classList.remove(workContentsHidden);
