@@ -246,6 +246,11 @@ html:not(.wf-active) .wrapper--hidden {
     padding-left: 2rem;
   }
 }
+@media screen and (max-width: 56.25rem) {
+  .works__detail {
+    padding-left: 0;
+  }
+}
 .works__close {
   font-size: 1.2rem;
   color: #88b5d3;
@@ -259,6 +264,22 @@ html:not(.wf-active) .wrapper--hidden {
   top: 0;
   background: #fff;
 }
+@media screen and (max-width: 56.25rem) {
+  .works__close {
+    top: auto;
+    bottom: 23.23838081vh;
+    right: 2.248875562vh;
+    width: 8.995502249vh;
+    height: 8.995502249vh;
+    text-align: center;
+    border: .1rem solid #88b5d3;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    line-height: calc(8.995502249vh - 1.499250375vh);
+    box-shadow: 0 0 .4rem 0 #c8c8c8;
+  }
+}
 .works__close::after {
   content: '';
   position: absolute;
@@ -270,6 +291,15 @@ html:not(.wf-active) .wrapper--hidden {
   background-size: cover;
   background-repeat: no-repeat;
 }
+@media screen and (max-width: 56.25rem) {
+  .works__close::after {
+    bottom: 2.248875562vh;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    transform: rotate(90deg);
+  }
+}
 .works__detail--hidden {
   display: none;
 }
@@ -278,10 +308,22 @@ html:not(.wf-active) .wrapper--hidden {
   display: flex;
   color: #787878;
 }
+@media screen and (max-width: 56.25rem) {
+  .works__detail__contents {
+    flex-direction: column;
+  }
+}
 .works__detail__images {
   width: 65.555555%;
   margin: 6rem 4.444445% 3rem 0;
   height: 100%;
+}
+@media screen and (max-width: 56.25rem) {
+  .works__detail__images {
+    width: 100%;
+    margin: 0;
+    order: 2;
+  }
 }
 .works__detail__link--movie {
   position: relative;
@@ -317,6 +359,11 @@ html:not(.wf-active) .wrapper--hidden {
   width: 100%;
   margin-bottom: 1rem;
 }
+@media screen and (max-width: 56.25rem) {
+  .works__detail__image {
+    margin-bottom: 1.499250375vh;
+  }
+}
 .works__detail__image-caption {
   color: #787878;
   margin-bottom: 3rem;
@@ -324,13 +371,34 @@ html:not(.wf-active) .wrapper--hidden {
 .works__detail__image-caption:last-of-type {
   margin-bottom: 1rem;
 }
+@media screen and (max-width: 56.25rem) {
+  .works__detail__image-caption {
+    margin-bottom: 2.99850075vh;
+  }
+  .works__detail__image-caption:last-of-type {
+    margin-bottom: 8.995502249vh;
+  }
+}
 .works__detail__text {
   width: 30%;
   position: relative;
 }
+@media screen and (max-width: 56.25rem) {
+  .works__detail__text {
+    width: 100%;
+  }
+}
 .works__detail__text-box {
   position: fixed;
   bottom: 2.4rem;
+}
+@media screen and (max-width: 56.25rem) {
+  .works__detail__text-box {
+    position: relative;
+    width: 100%;
+    order: 1;
+    bottom: auto;
+  }
 }
 .works__detail__title {
   font-size: 1.8rem;
@@ -339,23 +407,52 @@ html:not(.wf-active) .wrapper--hidden {
   margin: 0 0 1.5rem;
   border-bottom: .1rem dashed #c8c8c8;
 }
+@media screen and (max-width: 56.25rem) {
+  .works__detail__title {
+    font-size: 2.698650675vh;
+  }
+}
 .works__detail__title-note {
   font-size: 1.2rem;
+}
+@media screen and (max-width: 56.25rem) {
+  .works__detail__title-note {
+    font-size: 1.79910045vh;
+  }
 }
 .works__detail__description {
   height: 3.8rem;
   line-height: 1.5;
   margin-bottom: .4rem;
 }
+@media screen and (max-width: 56.25rem) {
+  .works__detail__description {
+    font-size: 2.098950525vh;
+    height: auto;
+    margin-bottom: 0;
+  }
+}
 .works__features {
   border-collapse: separate;
   border-spacing: 0 1.6rem;
   letter-spacing: .1rem;
 }
+@media screen and (max-width: 56.25rem) {
+  .works__features {
+    width: 100%;
+    border-spacing: 0 1.79910045vh;
+    margin-bottom: 1.499250375vh;
+  }
+}
 .works__feature-title {
   font-weight: 400;
   width: 7.5rem;
   border-right: .1rem solid #b4b4b4;
+}
+@media screen and (max-width: 56.25rem) {
+  .works__feature-title {
+    width: 11.244377811vh;
+  }
 }
 .works__feature-description {
   padding-left: 1.5rem;
@@ -363,6 +460,12 @@ html:not(.wf-active) .wrapper--hidden {
 }
 .works__feature-link {
   color: #88b5d3;
+}
+@media screen and (max-width: 56.25rem) {
+  .works__feature-link {
+    font-size: 2.3988006vh;
+    line-height: 2;
+  }
 }
 
 /* -------------------------------------------------------------
