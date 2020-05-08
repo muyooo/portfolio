@@ -268,8 +268,16 @@
     // Works transition
     var workIdNum = Number( pageUrlID.replace(/work/, '') ) - 1;
     moveNavigation(linkButtons, linkButtonsLen, linkButtons[2]);
-    if(!isNaN(workIdNum)) {
-      worksPreview(workIdNum);
+    if(!isNaN(workIdNum) && workIdNum != -1) {
+      (function waitJsonLoading() {
+        setTimeout(function() {
+          if(worksLoadFlag) {
+            worksPreview(workIdNum);
+          } else {
+            waitJsonLoading();
+          }
+        }, 100);
+      }());
     }
   } else if(pageUrlID.indexOf('about') != -1) {
     // About transition
