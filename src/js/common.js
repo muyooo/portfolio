@@ -249,11 +249,35 @@
   /* First Preview Settings         */
   /* ------------------------------ */
   // -- Wait font loading
-  var waitFontLoading = 1500;
+  var waitFontLoadingFirst = 200,
+      waitFontLoadingSecond = 800,
+      waitFontLoadingThird = 1500,
+      htmlClass,
+      wfActive = 'wf-active',
+      loading = document.querySelector('.loading');
   setTimeout(function() {
+    htmlClass = document.querySelector('html').getAttribute('class');
+    if(htmlClass.indexOf(wfActive) != -1) {
+      wrapperPreview();
+    } else {
+      loading.classList.remove('loading--hidden');
+      setTimeout(function() {
+        htmlClass = document.querySelector('html').getAttribute('class');
+        if(htmlClass.indexOf(wfActive) != -1) {
+          wrapperPreview();
+        } else {
+          setTimeout(function() {
+            wrapperPreview();
+          }, waitFontLoadingThird);
+        }
+      }, waitFontLoadingSecond);
+    }
+  }, waitFontLoadingFirst);
+  function wrapperPreview() {
     var wrapper = document.querySelector('.wrapper');
+    loading.classList.add('loading--hidden');
     wrapper.classList.remove('wrapper--hidden');
-  }, waitFontLoading);
+  }
   // -- Get document load
   window.addEventListener('load', function() {
     changeIconLinkPreviewing();

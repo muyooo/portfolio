@@ -15,7 +15,7 @@ body {
   opacity: 1;
   transition: 1.5s;
 }
-html:not(.wf-active) .wrapper--hidden {
+.wrapper--hidden {
   visibility: hidden;
   opacity: 0;
 }
@@ -23,6 +23,22 @@ html:not(.wf-active) .wrapper--hidden {
   .wrapper {
     flex-direction: column;
   }
+}
+.loading {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading--hidden {
+  display: none;
+}
+.loading__img {
+  width: 10vw;
+}
+.loading__icon {
+  width: 100%;
 }
 
 /* -------------------------------------------------------------
