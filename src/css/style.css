@@ -42,6 +42,11 @@ body {
 .loading__img {
   width: 10vw;
 }
+@media screen and (max-width: 53.125em) {
+  .loading__img {
+    width: 25vw;
+  }
+}
 .loading__icon {
   width: 100%;
 }
