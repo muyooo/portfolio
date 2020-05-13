@@ -128,9 +128,13 @@
     workDescription.innerHTML = work.description;
     // Create detail images
     var workImg = work.img,
-        workImgLen = workImg.length;
+        workImgLen = workImg.length,
+        loadedWorkImgLen = 0;
     for(var i = 0; i < workImgLen; i++) {
       var worksDetailImage = document.createElement('img');
+      worksDetailImage.onload = function() {
+        loadedWorkImgLen++;
+      }
       worksDetailImage.classList.add('works__detail__image');
       worksDetailImage.alt = work.imgAlt[i];
       if(typeof(workImg[i]) == 'string') {
@@ -191,49 +195,74 @@
     }
     // Hide work contents
     workContents.classList.add(workContentsHidden);
-    // Preview details
-    var workDetailHidden = 'works__detail--hidden';
-    workDetail.classList.remove(workDetailHidden);
-    // Set works-detail width
-    var worksList = document.querySelector('.works__list'),
-        worksListWidth = worksList.offsetWidth,
-        currentWindowWidth = window.innerWidth;
-    workDetail.style.width = currentWindowWidth >= 900 ? getRemValue(worksListWidth) : "";
-    // Set text-box width
-    var workText = document.querySelector('.works__detail__text'),
-        workTextWidth = workText.offsetWidth,
-        workTextBox = document.querySelector('.works__detail__text-box');
-    workTextBox.style.width = currentWindowWidth >= 900 ? getRemValue(workTextWidth) : "";
-    // Set close button
-    var closeWorkButton = document.querySelector('.works__close');
-    closeWorkButton.style.width = currentWindowWidth >= 900 ? getRemValue(worksListWidth) : "";
-    function closeWorkDetail() {
-      workDetail.classList.add(workDetailHidden);
-      workContents.classList.remove(workContentsHidden);
-      // Remove detail contents
-      var removeImageContents = workImages.querySelectorAll('.works__detail__image:not(.works__detail__image--link), .works__detail__image-caption, .works__detail__link'),
-          removeImageContentsLen = removeImageContents.length;
-      for(var i = 0; i < removeImageContentsLen; i++) {
-        workImages.removeChild(removeImageContents[i]);
+    // Preview work loading
+    var worksLoading = document.querySelector('.works__loading'),
+        worksLoadingHidden = 'works__loading--hidden';
+    worksLoading.classList.remove(worksLoadingHidden);
+    // Lock Screen
+    var screenLock = document.createElement('div');
+    screenLock.style.zIndex = 100;
+    screenLock.style.position = 'absolute';
+    screenLock.style.top = 0;
+    screenLock.style.left = 0;
+    screenLock.style.right = 0;
+    screenLock.style.bottom = 0;
+    document.querySelector('body').appendChild(screenLock);
+    // Wait work detail's image loading
+    (function previewWorkDetail() {
+      if(workImgLen != loadedWorkImgLen) {
+        setTimeout(function() {
+          previewWorkDetail();
+        }, 300);
+        return;
       }
-      var worksFeatures = document.querySelector('.works__features'),
-          removeOtherFeatures = worksFeatures.querySelectorAll('.works__feature-other'),
-          removeOtherFeaturesLen = removeOtherFeatures.length;
-      for(var i = 0; i < removeOtherFeaturesLen; i++) {
-        worksFeatures.removeChild(removeOtherFeatures[i]);
+      // Preview details
+      worksLoading.classList.add(worksLoadingHidden);
+      var workDetailHidden = 'works__detail--hidden';
+      workDetail.classList.remove(workDetailHidden);
+      // Set works-detail width
+      var worksList = document.querySelector('.works__list'),
+          worksListWidth = worksList.offsetWidth,
+          currentWindowWidth = window.innerWidth;
+      workDetail.style.width = currentWindowWidth >= 900 ? getRemValue(worksListWidth) : "";
+      // Set text-box width
+      var workText = document.querySelector('.works__detail__text'),
+          workTextWidth = workText.offsetWidth,
+          workTextBox = document.querySelector('.works__detail__text-box');
+      workTextBox.style.width = currentWindowWidth >= 900 ? getRemValue(workTextWidth) : "";
+      // Set close button
+      var closeWorkButton = document.querySelector('.works__close');
+      closeWorkButton.style.width = currentWindowWidth >= 900 ? getRemValue(worksListWidth) : "";
+      function closeWorkDetail() {
+        workDetail.classList.add(workDetailHidden);
+        workContents.classList.remove(workContentsHidden);
+        // Remove detail contents
+        var removeImageContents = workImages.querySelectorAll('.works__detail__image:not(.works__detail__image--link), .works__detail__image-caption, .works__detail__link'),
+            removeImageContentsLen = removeImageContents.length;
+        for(var i = 0; i < removeImageContentsLen; i++) {
+          workImages.removeChild(removeImageContents[i]);
+        }
+        var worksFeatures = document.querySelector('.works__features'),
+            removeOtherFeatures = worksFeatures.querySelectorAll('.works__feature-other'),
+            removeOtherFeaturesLen = removeOtherFeatures.length;
+        for(var i = 0; i < removeOtherFeaturesLen; i++) {
+          worksFeatures.removeChild(removeOtherFeatures[i]);
+        }
+        updateUrlHash('works');
       }
-      updateUrlHash('works');
-    }
-    closeWorkButton.addEventListener('click', function() {
-      closeWorkDetail();
-    });
-    window.addEventListener('resize', function() {
-      closeWorkDetail();
-    });
-    // Update URL hash
-    var hashNum = index + 1,
-        targetHash = 'work' + ('0' + hashNum).slice(-2);
-    updateUrlHash(targetHash);
+      closeWorkButton.addEventListener('click', function() {
+        closeWorkDetail();
+      });
+      window.addEventListener('resize', function() {
+        closeWorkDetail();
+      });
+      // Update URL hash
+      var hashNum = index + 1,
+          targetHash = 'work' + ('0' + hashNum).slice(-2);
+      updateUrlHash(targetHash);
+      // unlock Screen
+      document.querySelector('body').removeChild(screenLock);
+    }());
   }
   // -- Return rem value
   function getRemValue(num) {
