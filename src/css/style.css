@@ -448,14 +448,14 @@ body {
   }
 }
 .works__detail__description {
-  height: 3.8rem;
+  min-height: 3.8rem;
   line-height: 1.5;
   margin-bottom: .4rem;
 }
 @media screen and (max-width: 53.125em) {
   .works__detail__description {
     font-size: 2.098950525vh;
-    height: auto;
+    min-height: auto;
     margin-bottom: 0;
   }
 }

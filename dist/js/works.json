@@ -3,8 +3,14 @@
     {
       "title": "スプラトゥーンの名刺",
       "description": "スプラトゥーン仲間を募集するために作った名刺。",
-      "img": ["image/works_01_img01.jpg"],
-      "imgCaption": [""],
+      "img": [
+        "image/works_01_img01.jpg",
+        "image/works_01_img02.jpg"
+      ],
+      "imgCaption": [
+        "最新のデザイン。",
+        "実際に印刷した試作。"
+      ],
       "imgAlt": ["スプラトゥーンの名刺"],
       "descriptions": [
         "Illustrator ／ Photoshop",
@@ -27,8 +33,8 @@
       "otherContent": ""
     },
     {
-      "title": "スプラトゥーンの動画",
-      "description": "Youtubeに提供するために編集したスプラトゥーン2の動画。",
+      "title": "スプラトゥーン2の動画",
+      "description": "ゲーム実況者（ねこたんさん）に提供するため、各プレイヤーの動きを一画面で確認できるように編集したスプラトゥーン2のプレイ動画。",
       "img": [
         ["http://img.youtube.com/vi/pQUVEnf0Dww/mqdefault.jpg","https://youtu.be/pQUVEnf0Dww","works__detail__link--movie"],
         ["http://img.youtube.com/vi/Rbo54P33xOk/mqdefault.jpg","https://youtu.be/Rbo54P33xOk","works__detail__link--movie"],
@@ -53,7 +59,7 @@
     },
     {
       "title": "イチジクありがとうカード<span class='works__detail__title-note'>(2019)</span>",
-      "description": "イチジク農家がイチジク購入者に送るありがとうカード。",
+      "description": "イチジク農家がイチジクを買ってくれた人に、感謝を伝えるため送ったありがとうカード。",
       "img": [
         "image/works_04_img01.jpg",
         "image/works_04_img02.jpg",
@@ -76,7 +82,7 @@
     },
     {
       "title": "飲み会ポイント",
-      "description": "飲み会を断るためのWebサービス。",
+      "description": "飲み会を断るため、1ヶ月で飲み会に行ける回数をポイント化した「飲み会ポイント」を管理するWebサービス。",
       "img": [
         "image/works_05_img01.jpg",
         "image/works_05_img02.jpg"
@@ -94,7 +100,7 @@
         "2020/03〜開発中"
       ],
       "otherTitle": ["リンク"],
-      "otherContent": ["<a class='works__feature-link' href='https://note.com/muyooo/n/nc8d15d554bfa?magazine_key=mdfbc6d9e2326' target='_blank' rel='noopener noreferrer'>開発日誌</a><br><a class='works__feature-link' href='dev/beerpoint_first_mocup/index.html'>最初の試作</a>"]
+      "otherContent": ["<a class='works__feature-link' href='https://note.com/muyooo/n/nc8d15d554bfa' target='_blank' rel='noopener noreferrer'>開発日誌</a><br><a class='works__feature-link' href='dev/beerpoint_first_mocup/index.html'>最初の試作</a>"]
     }
   ]
 }
