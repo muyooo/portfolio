@@ -50,6 +50,16 @@ body {
 .loading__icon {
   width: 100%;
 }
+.noscript__alert {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  letter-spacing: .03;
+  color: #ff1919;
+  padding: 1.5rem 2rem;
+  margin: 3rem;
+  border: .2rem solid #ff1919;
+  border-radius: .8rem;
+}
 
 /* -------------------------------------------------------------
  * WORKS
