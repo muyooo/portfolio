@@ -33,7 +33,20 @@
   </section>
   <main class="wrapper wrapper--hidden" role="main">
     <section class="works">
-      <p class="works__backtext">Works</p>
+      <section class="works__summary">
+        <h4 class="works__summary__subheading">主な作品</h4>
+        <div class="works__summary__primary-works">
+          <button class="works__summary__primary-work">
+            <img class="works__summary__chart" src="image/top_primary_1.jpg" alt="飲み会ポイント（主なWeb作品）">
+            Web<span class="works__summary__primary-note">［進行中］</span>
+          </button>
+          <button class="works__summary__primary-work">
+            <img class="works__summary__chart" src="image/top_primary_2.jpg" alt="イチジクありがとうカード2019（主なデザイン作品）">
+            デザイン
+          </button>
+        </div>
+        <button class="works__summary__link">他の作品を見る</button>
+      </section>
       <section class="works__list works__list--hidden">
         <nav class="works__nav">
           <ul class="works__nav-list">
@@ -97,50 +110,72 @@
     </section>
 
     <nav class="main-nav">
-      <div class="main-nav-sp__titles">
+      <section class="main-nav__titles">
         <h1 class="main-nav__title">
-          <a href=""><img class="main-nav__logo" src="image/logo_muyooo.jpg" alt="title logo"></a>
+          <img class="main-nav__logo" src="image/logo_muyooo.jpg" alt="title logo">
         </h1>
         <div class="main-nav-sp__descriptions">
-          <h2 class="main-nav__subtitle">ポートフォリオ</h2>
           <p class="main-nav__description">
             Webデザイナーのむょーが作成したWebやデザインを公開するサイトです。
           </p>
         </div>
-      </div>
-      <ul class="main-nav__link-list">
-        <li class="main-nav__link-button main-nav__link-button--active" data-type="top">
-          トップ
-        </li>
-        <li class="main-nav__link-button" data-type="about">
-          自己紹介
-        </li>
-        <li class="main-nav__link-button" data-type="works">
-          作品
-        </li>
-      </ul>
-      <ul class="main-nav__icon-link-list">
-        <li class="main-nav__icon-link main-nav__icon-link--github">
-          <a href="https://github.com/muyooo" target="_blank" rel="noopener noreferrer">
-            <img class="main-nav__icon-link__logo" src="image/logo_github.svg" alt="GitHub logo">
-          </a>
-        </li>
-        <li class="main-nav__icon-link main-nav__icon-link--note">
-          <a href="https://note.com/muyooo" target="_blank" rel="noopener noreferrer">
-            <img class="main-nav__icon-link__logo" src="image/logo_note.svg" alt="note logo">
-          </a>
-        </li>
-        <li class="main-nav__icon-link main-nav__icon-link--blog">
-          <a href="https://muyooo.com/blog/">
-            <img class="main-nav__icon-link__logo" src="image/logo_blog.svg" alt="blog logo">
-          </a>
-        </li>
-      </ul>
-      <p class="main-nav__copyright">Copyright &copy; 2020 むょー Co.,Ltd. All Rights Reserved.</p>
+      </section>
+      <section class="main-nav__contents">
+        <ul class="main-nav__link-lists">
+          <li class="main-nav__link-list">
+            <button class="main-nav__link-button" data-type="works">作品一覧</button>
+          </li>
+          <li class="main-nav__link-list">
+            <button class="main-nav__link-button" data-type="about">自己紹介</button>
+          </li>
+          <li class="main-nav__link-list">
+            <button class="main-nav__link-button" data-type="contact">お問い合わせ</button>
+          </li>
+          <li class="main-nav__link-list">
+            <a class="main-nav__link" href="https://muyooo.com/blog/">ゲームブログ</a>
+          </li>
+          <li class="main-nav__link-list main-nav__link-list--blank">
+            <a class="main-nav__link" href="https://note.com/muyooo" target="_blank" rel="noopener noreferrer">開発日誌</a>
+          </li>
+        </ul>
+        <p class="main-nav__footer">
+          <button class="main-nav__policy">サイトポリシー</button><br>
+          Copyright &copy; 2020 むょー Co.,Ltd. All Rights Reserved.
+        </p>
+      </section>
     </nav>
 
     <section class="about">
-      <p class="about__backtext">About</p>
+      <section class="about__summary">
+        <h4 class="about__summary__heading">RPGするWebデザイナー</h4>
+        <div class="about__summary__descriptions">
+          <div class="about__summary__description">
+            <div class="about__summary__img">
+              <img class="about__summary__chart" src="image/chart_rpg_1.svg" alt="">
+            </div>
+            レベル上げ<br>
+            <span class="about__summary__description-note">（自己研鑽）</span>
+          </div>
+          <div class="about__summary__description">
+            <div class="about__summary__img">
+              <img class="about__summary__chart" src="image/chart_rpg_2.svg" alt="">
+            </div>
+            仲間集め<br>
+            <span class="about__summary__description-note">（作業の協力者集め）</span>
+          </div>
+          <div class="about__summary__description about__summary__description--last">
+            <div class="about__summary__img">
+              <img class="about__summary__chart" src="image/chart_rpg_3.svg" alt="">
+            </div>
+            ボスを倒す<br>
+            <span class="about__summary__description-note">（誰かを幸せに）</span>
+          </div>
+        </div>
+        <div class="about__allow">
+          <img class="about__summary__chart" src="image/chart_rpg_allow.svg" alt="">
+        </div>
+        <button class="about__summary__link">詳しく見る</a>
+      </section>
       <section class="about__profile about__profile--hidden">
         <div class="about__image">
           <img class="about__profile-image" src="image/about_img.jpg" alt="profile image">
