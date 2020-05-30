@@ -17,20 +17,6 @@
   xhr.onerror = function() {
     alert("作品情報が読み込めませんでした。");
   }
-  // -- Toggle preview icon-link
-  function changeIconLinkPreviewing() {
-    var currentWindowHeight = window.innerHeight,
-        currentWindowWidth = window.innerWidth,
-        firstBreakPoint = 1280,
-        enablePreviewHeight = currentWindowWidth < firstBreakPoint ? 600 : 700,
-        iconLinkList = document.querySelector('.main-nav__icon-link-list'),
-        iconLinkListHidden = 'main-nav__icon-link-list--hidden';
-    if(currentWindowHeight < enablePreviewHeight) {
-      iconLinkList.classList.add(iconLinkListHidden);
-    } else {
-      iconLinkList.classList.remove(iconLinkListHidden);
-    }
-  }
   // -- Move Navigation
   function moveNavigation(linkButtons, linkButtonsLen, target) {
     var targetType = target.getAttribute('data-type'),
@@ -307,10 +293,6 @@
     loading.classList.add('loading--hidden');
     wrapper.classList.remove('wrapper--hidden');
   }
-  // -- Get document load
-  window.addEventListener('load', function() {
-    changeIconLinkPreviewing();
-  });
   // -- ID link page transition
   var pageUrl = location.href,
       pageUrlID = pageUrl.replace(/.*\/.*\#/, ''),
@@ -345,15 +327,6 @@
   /* ------------------------------ */
   /* User Interaction               */
   /* ------------------------------ */
-  // -- Get window resize
-  var resizeQueue,
-      resizeWait = 300;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeQueue);
-    setTimeout(function() {
-      changeIconLinkPreviewing();
-    }, resizeWait);
-  });
   // -- Click link buttons
   for(var i = 0; i < linkButtonsLen; i++) {
     var target = linkButtons[i];
