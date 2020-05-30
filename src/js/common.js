@@ -22,6 +22,9 @@
     var targetType = target.getAttribute('data-type'),
         activeClass = 'main-nav__link-button--active';
     // Remove all active classes and add active class to target
+    if(targetType == null) {
+      return false;
+    }
     for(var i = 0; i < linkButtonsLen; i++) {
       linkButtons[i].classList.remove(activeClass);
     }
@@ -39,6 +42,7 @@
     // Get section query
     var mainContents = document.querySelectorAll(mainContentQuery),
         mainContentsLen = mainContents.length;
+    // Reset contents class
     for(var i = 0; i < mainContentsLen; i++) {
       var targetSection = mainContents[i],
           targetSectionClass = mainContentClasses[i];
@@ -49,22 +53,22 @@
         works = mainContents[0],
         top = mainContents[1],
         about = mainContents[2],
-        worksBackText = document.querySelector('.works__backtext'),
-        worksBackTextHidden = 'works__backtext--hidden',
+        aboutSummary = document.querySelector('.about__summary'),
+        aboutSummaryHidden = 'about__summary--hidden',
         worksList = document.querySelector('.works__list'),
         worksListHidden = 'works__list--hidden',
         aboutProfile = document.querySelector('.about__profile'),
         aboutProfileHidden = 'about__profile--hidden',
-        aboutBackText = document.querySelector('.about__backtext'),
-        aboutBackTextHidden = 'about__backtext--hidden';
-    aboutBackText.classList.remove(aboutBackTextHidden);
-    worksBackText.classList.remove(worksBackTextHidden);
+        worksSummary = document.querySelector('.works__summary'),
+        worksSummaryHidden = 'works__summary--hidden';
+    worksSummary.classList.remove(worksSummaryHidden);
+    aboutSummary.classList.remove(aboutSummaryHidden);
     aboutProfile.classList.add(aboutProfileHidden);
     worksList.classList.add(worksListHidden);
     updateUrlHash(targetType);
     if(targetType == 'works') {
       about.classList.add('about--hidden');
-      worksBackText.classList.add(worksBackTextHidden);
+      worksSummary.classList.add(worksSummaryHidden);
       works.classList.add(emphasisClass);
       worksList.classList.remove(worksListHidden);
     } else if(targetType == 'top') {
@@ -72,7 +76,7 @@
     } else if(targetType == 'about') {
       about.classList.add(emphasisClass);
       works.classList.add('works--hidden');
-      aboutBackText.classList.add(aboutBackTextHidden);
+      aboutSummary.classList.add(aboutSummaryHidden);
       aboutProfile.classList.remove(aboutProfileHidden);
     }
   }
@@ -302,7 +306,7 @@
   if(pageUrlID.indexOf('work') != -1) {
     // Works transition
     var workIdNum = Number( pageUrlID.replace(/work/, '') ) - 1;
-    moveNavigation(linkButtons, linkButtonsLen, linkButtons[2]);
+    moveNavigation(linkButtons, linkButtonsLen, linkButtons[0]);
     setTimeout(function() {
       if(!isNaN(workIdNum) && workIdNum != -1) {
         (function waitJsonLoading() {
@@ -334,6 +338,14 @@
       moveNavigation(linkButtons, linkButtonsLen, e.target);
     });
   }
+  var worksSummaryLink = document.querySelector('.works__summary__link'),
+      aboutSummaryLink = document.querySelector('.about__summary__link');
+  worksSummaryLink.addEventListener('click', function() {
+    moveNavigation(linkButtons, linkButtonsLen, linkButtons[0]);
+  });
+  aboutSummaryLink.addEventListener('click', function() {
+    moveNavigation(linkButtons, linkButtonsLen, linkButtons[1]);
+  });
   // -- Click works sort button
   var worksSortButtons = document.querySelectorAll('.works__sort'),
       worksSortButtonsLen = worksSortButtons.length;
