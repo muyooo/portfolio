@@ -372,4 +372,9 @@
       worksPreview(workNum);
     });
   }
+  // -- Click contact button from about
+  var contactButton = document.querySelector('.about__contact');
+  contactButton.addEventListener('click', function() {
+    moveNavigation(linkButtons, linkButtonsLen, linkButtons[2]);
+  });
 }());

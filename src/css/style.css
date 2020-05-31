@@ -31,7 +31,6 @@ button:active {
   visibility: visible;
   opacity: 1;
   transition: 1.5s;
-  margin: 0 4rem;
 }
 .wrapper--hidden {
   visibility: hidden;
@@ -590,7 +589,7 @@ button:active {
 .main-nav__title {
   width: calc(100% - 8rem);
   max-width: 19rem;
-  margin: 4rem;
+  margin: 4rem auto;
   cursor: pointer;
 }
 @media screen and (max-width: 53.125em) {
@@ -810,10 +809,15 @@ button:active {
 }
 .about--emphasis {
   width: 78.4%;
-  padding-top: 4rem;
+  padding: 4rem 4rem 0 0;
   justify-content: start;
   align-items: start;
   transition: .7s, padding 0s;
+}
+@media screen and (min-width: 102.5em) {
+  .about--emphasis {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 53.125em) {
   .about--emphasis {
@@ -823,7 +827,7 @@ button:active {
   }
 }
 .about--hidden {
-  width: 0;
+  width: 4rem;
   padding: 0;
   margin: 0;
   opacity: 0;
@@ -899,75 +903,83 @@ button:active {
   padding: 2rem 0;
   margin: 0 auto;
 }
+.about__profile {
+  width: 100%;
+}
 .about__profile--hidden {
   display: none;
 }
-.about__image {
-  width: 18rem;
+.about__title {
+  display: flex;
+  margin-bottom: 8rem;
 }
-.about__profile-image {
+.about__image {
   width: 100%;
 }
-.about__detail {
+.about__character {
+  width: 9.6rem;
+}
+.about__names {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 2rem;
+}
+.about__logo-image {
+  width: 14rem;
+  margin-bottom: .7rem;
+}
+.about__logo {
+  width: 100%;
+}
+.about__subtitle {
+  font-size: 3rem;
   color: #787878;
-  border-collapse: separate;
-  border-spacing: 0 2.6rem;
-  letter-spacing: .1rem;
+  letter-spacing: -.1rem;
 }
-.about__headline {
-  width: 8.0rem;
-  font-weight: 400;
-  text-align: right;
-  padding-right: 1.6rem;
-  border-right: .1rem solid #b4b4b4;
+.about__details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-@media screen and (max-width: 80em) {
-  .about__headline {
-    font-size: 1.2rem;
-  }
+.about__detail {
+  width: calc(50% - 2rem);
+  margin-bottom: 8rem;
 }
-@media screen and (max-width: 53.125em) {
-  .about__headline {
-    font-size: 1.949025487vh;
-  }
+.about__detail--empty {
+  visibility: hidden;
 }
-.about__text {
-  padding-left: 1.6rem;
-  line-height: 1.85;
+.about__detail-title {
+  font-size: 3rem;
+  color: #787878;
+  margin-bottom: 2rem;
 }
-@media screen and (max-width: 80em) {
-  .about__text {
-    font-size: 1.2rem;
-  }
+.about__detail-title--kata {
+  letter-spacing: -.3rem;
 }
-.about__text--br-sp {
-  display: none;
+.about__rpg-chart {
+  width: 32.4rem;
+  margin-bottom: 2rem;
 }
-@media screen and (max-width: 53.125em) {
-  .about__text {
-    font-size: 1.949025487vh;
-  }
-  .about__text--br,
-  .about__text--slash {
-    display: none;
-  }
-  .about__text--br-sp {
-    display: block;
-  }
+.about__description {
+  font-size: 1.3rem;
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+  color: #787878;
+  line-height: 1.8;
+  letter-spacing: .05rem;
 }
-.about__link {
+.about__note {
+  font-size: 1.0rem;
+}
+.about__contact {
+  font-size: 2.4rem;
   color: #88b5d3;
 }
-@media screen and (max-width: 53.125em) {
-  .about__link {
-    font-size: 2.3988006vh;
-  }
-}
-.about__caption {
-  font-size: 1rem;
-}
-@media screen and (max-width: 53.125em) {
-  .about__caption {
-    font-size: 1.649175412vh;
-  }
+.about__detail-icon {
+  width: 14.7rem;
+  margin-bottom: 2rem;
 }
