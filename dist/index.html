@@ -50,34 +50,45 @@
       <section class="works__list works__list--hidden">
         <nav class="works__nav">
           <ul class="works__nav-list">
-            <li class="works__sort works__sort--active" data-type="all">ALL</li>
-            <li class="works__sort" data-type="web">Web</li>
-            <li class="works__sort" data-type="design">Design</li>
-            <li class="works__sort" data-type="movie">Movie</li>
-            <li class="works__sort" data-type="music">Music</li>
+            <li class="works__sort"><button class="works__sort-button works__sort--active" data-type="all">ALL</button></li>
+            <li class="works__sort"><button class="works__sort-button" data-type="web">Web</button></li>
+            <li class="works__sort"><button class="works__sort-button" data-type="design">Design</button></li>
+            <li class="works__sort"><button class="works__sort-button" data-type="movie">Movie</button></li>
+            <li class="works__sort works__sort--last"><button class="works__sort-button" data-type="music">Music</button></li>
           </ul>
         </nav>
         <ul class="works__contents">
-          <li class="works__work works__work--05" data-type="web" data-num="05">
-            <h3 class="works__work-title">飲み会ポイント</h3>
-            <p class="works__work-description">飲み会を断るためのWebサービス。</p>
+          <li class="works__work">
+            <button class="works__work-button works__work-button--05" data-type="web" data-num="05">
+              <img class="works__work-image" src="image/works_list_05.jpg" alt="飲み会ポイントのイメージ画像">
+              <h3 class="works__work-title">飲み会ポイント</h3>
+            </button>
           </li>
-          <li class="works__work works__work--04" data-type="design">
-            <h3 class="works__work-title">イチジクありがとうカード<span class="works__work-caption">(2019)</span></h3>
-            <p class="works__work-description">イチジク農家がイチジク購入者に送るありがとうカード。</p>
+          <li class="works__work">
+            <button class="works__work-button works__work-button--04" data-type="design" data-num="04">
+              <img class="works__work-image" src="image/works_list_04.jpg" alt="イチジクありがとうカード2019のイメージ画像">
+              <h3 class="works__work-title">イチジクありがとうカード<span class="works__work-note">2019</span></h3>
+            </button>
           </li>
-          <li class="works__work works__work--03" data-type="movie">
-            <h3 class="works__work-title">スプラトゥーン2の動画</h3>
-            <p class="works__work-description">ゲーム実況者の方への提供用に編集したスプラトゥーン2のプレイ動画。</p>
+          <li class="works__work">
+            <button class="works__work-button works__work-button--03" data-type="movie design" data-num="03">
+              <img class="works__work-image" src="image/works_list_03.jpg" alt="いかたっぷりシェルター4のロゴ">
+              <h3 class="works__work-title">いかたっぷりシェルター4</h3>
+            </button>
           </li>
-          <li class="works__work works__work--02" data-type="design">
-            <h3 class="works__work-title">むょーのロゴ</h3>
-            <p class="works__work-description">むょーという語感の柔らかさを表現したロゴ。</p>
+          <li class="works__work">
+            <button class="works__work-button works__work-button--02" data-type="design" data-num="02">
+              <img class="works__work-image" src="image/works_list_02.jpg" alt="むょーのロゴとアイコン">
+              <h3 class="works__work-title">むょーロゴ／アイコン</h3>
+            </button>
           </li>
-          <li class="works__work works__work--01" data-type="design">
-            <h3 class="works__work-title">スプラトゥーンの名刺</h3>
-            <p class="works__work-description">スプラトゥーン仲間を募集するために作った名刺。</p>
+          <li class="works__work">
+            <button class="works__work-button works__work-button--01" data-type="design" data-num="01">
+              <img class="works__work-image" src="image/works_list_01.jpg" alt="スプラトゥーンの名刺のイメージ">
+              <h3 class="works__work-title">スプラトゥーンの名刺</h3>
+            </button>
           </li>
+          <li class="works__work works__work--empty"></li>
         </ul>
         <section class="works__loading works__loading--hidden">
           <div class="works__loading__img">
