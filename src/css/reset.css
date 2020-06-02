@@ -16,6 +16,9 @@ body {
 main, footer, header, nav, section {
   display: block;
 }
+img {
+  vertical-align: bottom;
+}
 ul {
   list-style: none;
 }
