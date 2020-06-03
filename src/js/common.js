@@ -233,6 +233,7 @@
       function closeWorkDetail() {
         workDetail.classList.add(workDetailHidden);
         workContents.classList.remove(workContentsHidden);
+        workNav.classList.remove(workNavHidden);
         // Remove detail contents
         workImages.innerHTML = '';
         process.innerHTML = '';
