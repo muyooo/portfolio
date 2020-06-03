@@ -2,105 +2,189 @@
   "works":[
     {
       "title": "スプラトゥーンの名刺",
-      "description": "スプラトゥーン仲間を募集するために作った名刺。",
-      "img": [
-        "image/works_01_img01.jpg",
-        "image/works_01_img02.jpg"
+      "description": [
+        "スプラトゥーン2における自分のステータスを掲載した名刺です。",
+        "twitter上で流行っていたスプラトゥーン2の自己紹介カードから着想を得て、自己紹介といえば名刺だ！と勢いで制作しました。<br>twitterのゲームアカウントを作りたての頃で、仲間を作る目的もあります。",
+        [
+          "思いついてすぐ形にして公開しました。<br>twitterに公開したところ、48いいねもらえてネット上の繋がりが少し増えた、という感じでした。"
+        ],
+        "デザイン",
+        "Illustrator<br>Photoshop",
+        "2019/04（約1週間）"
       ],
+      "process": [
+        "思い<br>つき",
+        "デザ<br>イン",
+        "投稿"
+      ],
+      "img": {
+        "main" :[
+          "image/works_01_img01.jpg",
+          "image/works_01_img02.jpg"
+        ],
+        "process": [
+          ""
+        ]
+      },
       "imgCaption": [
-        "最新のデザイン。",
+        "",
         "実際に印刷した試作。"
       ],
-      "imgAlt": ["スプラトゥーンの名刺"],
-      "descriptions": [
-        "Illustrator ／ Photoshop",
-        "2019/04"
-      ],
-      "otherTitle": "",
-      "otherContent": ""
+      "imgAlt": [
+        "スプラトゥーンの名刺",
+        "実際に印刷した最初の試作イメージ"
+      ]
     },
     {
-      "title": "むょーのロゴ",
-      "description": "むょーという語感の柔らかさを表現したロゴ。",
-      "img": ["image/works_02_img01.jpg"],
-      "imgCaption": [""],
-      "imgAlt": ["むょーロゴ"],
-      "descriptions": [
-        "Illustrator",
-        "2019/07"
+      "title": "むょーロゴ／アイコン",
+      "description": [
+        "インターネット上の自分、「むょー」を表すロゴとアイコンです。",
+        "ぱっと見た時に、「ゲーム好き」「メガネにこだわりがある」「やわらかい雰囲気」といった属性を伝えるために制作しました。<br>主にWebサービスのアイコンとして活用しています。",
+        [
+          "名前の語感からとても柔らかいイメージでデザインしていたものを、自分の「きっちりした性格」という属性を反映させ、ちょうどいいバランスに仕上げました。",
+          "ゲームのコントローラーを軸に色々なキャラクターを考案し、色々とバランスを調整して現在の形になっています。"
+        ],
+        "デザイン",
+        "Illustrator<br>Photoshop",
+        "2019/06〜07（約2ヶ月）"
       ],
-      "otherTitle": "",
-      "otherContent": ""
-    },
-    {
-      "title": "スプラトゥーン2の動画",
-      "description": "ゲーム実況者（ねこたんさん）に提供するため、各プレイヤーの動きを一画面で確認できるように編集したスプラトゥーン2のプレイ動画。",
-      "img": [
-        ["http://img.youtube.com/vi/pQUVEnf0Dww/mqdefault.jpg","https://youtu.be/pQUVEnf0Dww","works__detail__link--movie"],
-        ["http://img.youtube.com/vi/Rbo54P33xOk/mqdefault.jpg","https://youtu.be/Rbo54P33xOk","works__detail__link--movie"],
-        ["http://img.youtube.com/vi/jCCkJzC_aBg/mqdefault.jpg","https://youtu.be/jCCkJzC_aBg","works__detail__link--movie"]
+      "process": [
+        "アイ<br>デア",
+        "ラフ<br>制作",
+        "デザ<br>イン"
       ],
+      "img": {
+        "main" :[
+          "image/works_02_img01.jpg"
+        ],
+        "process": [
+          "image/works_02_process01.jpg",
+          "image/works_02_process02.jpg"
+        ]
+      },
       "imgCaption": [
-        "傘4人組で行くリーグマッチ!! Part7",
-        "傘4人組で行くリーグマッチ!! Part6",
-        "傘4人組で行くリーグマッチ!! Part5"
+        ""
       ],
       "imgAlt": [
-        "傘4人組で行くリーグマッチ!! Part7 のサムネ画像",
-        "傘4人組で行くリーグマッチ!! Part6 のサムネ画像",
-        "傘4人組で行くリーグマッチ!! Part5 のサムネ画像"
-      ],
-      "descriptions": [
-        "After Effects",
-        "2019/06〜08"
-      ],
-      "otherTitle": ["提供先"],
-      "otherContent": ["<a class='works__feature-link' href='https://www.youtube.com/channel/UCUSqstO8xWN9WD5OxqtvkoQ' target='_blank' rel='noreffer noopener'>ねこたんチャンネル</a>"]
+        "むょーロゴ／アイコンイメージ"
+      ]
     },
     {
-      "title": "イチジクありがとうカード<span class='works__detail__title-note'>(2019)</span>",
-      "description": "イチジク農家がイチジクを買ってくれた人に、感謝を伝えるため送ったありがとうカード。",
-      "img": [
-        "image/works_04_img01.jpg",
-        "image/works_04_img02.jpg",
-        "image/works_04_img03.jpg",
-        "image/works_04_img04.jpg"
+      "title": "いかたっぷりシェルター4",
+      "description": [
+        "「ねこたん」というゲーム実況者の方を中心として、スプラトゥーン2のシェルター系の武器を使っている4人が集まったチームです。<div class='works__detail__links'><a class='works__detail__link' href='https://www.youtube.com/channel/UCUSqstO8xWN9WD5OxqtvkoQ' target='_blank' rel='noreferrer noopener'>ねこたんチャンネル</a><br><a class='works__detail__link' href='https://www.youtube.com/channel/UCsGr-Kq8QKNz1QWR-jm19SA' target='_blank' rel='noreferrer noopener'>アフロあふろ</a><br><a class='works__detail__link works__detail__link--last' href='https://www.youtube.com/channel/UCdugYB9cRGmQaztzifjW6Yg' target='_blank' rel='noreferrer noopener'>ムラサキの少年</a><br></div>",
+        "年齢も住処もバラバラですが、スプラトゥーン2を楽しむために結成しました。<br>ゲーム画面を提供し合って、お互いの視点を合成した動画を作成。結束力を高めるためにロゴやTシャツもデザインしました。",
+        [
+          "お互いのプレイ動画を提供し合って動画を作成したり、結束力を高めるためにロゴやTシャツをデザインしたりしました。"
+        ],
+        "動画編集（一部）<br>作曲<br>デザイン",
+        "After Effects<br>Logic<br>Illustrator",
+        "2019/06（ロゴデザイン／約2週間）<br>2019/06〜08（動画編集／約2ヶ月）<br>2019/09（Tシャツデザイン／約2週間）"
       ],
-      "imgCaption": ["","","","表面／裏面のデザイン"],
+      "process": [
+        "チーム<br>結成",
+        "ロゴ<br>作成",
+        "動画<br>投稿",
+        "シャツ<br>作成"
+      ],
+      "img": {
+        "main" :[
+          "image/works_03_img01.jpg",
+          "image/works_03_img02.jpg",
+          ["http://img.youtube.com/vi/jCCkJzC_aBg/mqdefault.jpg","https://youtu.be/jCCkJzC_aBg","works__detail__image-link--movie"],
+          ["http://img.youtube.com/vi/Rbo54P33xOk/mqdefault.jpg","https://youtu.be/Rbo54P33xOk","works__detail__image-link--movie"],
+          ["http://img.youtube.com/vi/pQUVEnf0Dww/mqdefault.jpg","https://youtu.be/pQUVEnf0Dww","works__detail__image-link--movie"]
+        ],
+        "process": [
+          ""
+        ]
+      },
+      "imgCaption": [
+        "ロゴデザイン",
+        "Tシャツデザイン",
+        "傘4人組で行くリーグマッチ!! Part5",
+        "傘4人組で行くリーグマッチ!! Part6",
+        "傘4人組で行くリーグマッチ!! Part7"
+      ],
       "imgAlt": [
-        "ありがとうカードイメージ",
-        "封筒からのぞくありがとうカード",
-        "ありがとうカードの表裏イメージ",
-        "ありがとうカードの表裏デザイン"
-      ],
-      "descriptions": [
+        "いかたっぷりシェルター4のロゴ",
+        "いかたっぷりシェルター4のTシャツ",
+        "傘4人組で行くリーグマッチ!! Part5 のサムネ画像",
+        "傘4人組で行くリーグマッチ!! Part6 のサムネ画像",
+        "傘4人組で行くリーグマッチ!! Part7 のサムネ画像"
+      ]
+    },
+    {
+      "title": "イチジクありがとうカード<span class='works__detail__title-note'>2019</span>",
+      "description": [
+        "実家のイチジク農家がイチジクを買ってくれた人に送るありがとうカードです。<br>感謝の手紙をイメージし、封筒に入れて渡しました。手紙にすることで、翌年まで連絡先を保存してもらう狙いもあります。",
+        "実家のイチジク農家のチラシデザインを手伝った流れで「感謝を伝えるチラシが作りたい」という依頼があったので制作しました。<br>チラシは感謝を伝えるのには適していないと思ったため、「感謝の手紙を送るのはどうか」とカード形式のデザインを提案して採用されました。",
+        [
+          "ラフ段階で手紙案を提案して採用されたため、手戻りも少なく順調に進みました。<br>封筒は市販品を使用したため、封入作業まで担当しています。",
+          "実際のイチジクやイチジクの葉っぱを撮影し、デザインの参考にしています。"
+        ],
+        "企画<br>デザイン<br>ディレクション",
         "Illustrator",
-        "2019/10"
+        "2019/10（約1ヶ月）"
       ],
-      "otherTitle": "",
-      "otherContent": ""
+      "process": [
+        "ヒア<br>リング",
+        "ラフ<br>提出",
+        "デザ<br>イン",
+        "印刷<br>手配",
+        "封入"
+      ],
+      "img": {
+        "main" :[
+          "image/works_04_img01.jpg",
+          "image/works_04_img02.jpg"
+        ],
+        "process": [
+          "",
+          "image/works_04_process01.jpg"
+        ]
+      },
+      "imgCaption": [
+        "",
+        ""
+      ],
+      "imgAlt": [
+        "イチジクありがとうカードのイメージ",
+        "イチジクありがとうカードのデザイン（表裏）"
+      ]
     },
     {
       "title": "飲み会ポイント",
-      "description": "飲み会を断るため、1ヶ月で飲み会に行ける回数をポイント化した「飲み会ポイント」を管理するWebサービス。",
-      "img": [
-        "image/works_05_img01.jpg",
-        "image/works_05_img02.jpg"
-      ],
-      "imgCaption": [
-        "開発日誌の記事ヘッダー。",
-        "最初の試作。"
-      ],
-      "imgAlt": [
-        "開発日誌の記事ヘッダー。",
-        "最初の試作"
-      ],
-      "descriptions": [
-        "Visual Studio Code<br>Git（ターミナル）",
+      "description": [
+        "1ヶ月間に、飲み会に行くことのできる回数をポイント化した「飲み会ポイント」を管理するWebサービス。<br>※現在は機能のみを実装した試作まで開発が進んでいます。<div class='works__detail__links'><a class='works__detail__link works__detail__link--last' href='dev/beerpoint_first_mocup/index.html'>試作を見る</a></div>",
+        "人見知りの自分にとって「飲み会」とは、嫌いではないけれどたくさんあるとめんどくさいものです。<br>けれど、飲み会の誘いを後腐れなく断るのはすごく難しいです。<br><br>「それがないと飲みに行けない」という双方の納得できる指標があると断りやすそうだと考え、飲み会ポイントという指標を作り、それを管理するWebサービスを開発することにしました。<br><br>詳しくは<a class='works__detail__description-link' href='https://note.com/muyooo/n/nc8d15d554bfa' target='_blank' rel='noreferrer noopener'>開発日誌</a>にまとめてあります。",
+        [
+          "1人で企画〜開発まで全てを担当しているため、スピードを重視しています。リサーチは省き、要件定義や仕様書は最低限の内容で進めています。"
+        ],
+        "企画<br>デザイン<br>コーディング・プログラミング",
+        "Illustrator<br>Visual Studio Code<br>ターミナル（Git）",
         "2020/03〜開発中"
       ],
-      "otherTitle": ["リンク"],
-      "otherContent": ["<a class='works__feature-link' href='https://note.com/muyooo/n/nc8d15d554bfa' target='_blank' rel='noopener noreferrer'>開発日誌</a><br><a class='works__feature-link' href='dev/beerpoint_first_mocup/index.html'>最初の試作</a>"]
+      "process": [
+        "<a class='works__detail__process-link' href='https://note.com/muyooo/n/nc8d15d554bfa' target='_blank' rel='noreferrer noopener'>問題<br>提起</a>",
+        "<a class='works__detail__process-link' href='https://note.com/muyooo/n/nba77c357a6ca' target='_blank' rel='noreferrer noopener'>要件<br>定義</a>",
+        "<a class='works__detail__process-link' href='https://note.com/muyooo/n/n8e85f52f1263' target='_blank' rel='noreferrer noopener'>仕様書</a>",
+        "<a class='works__detail__process-link' href='dev/beerpoint_first_mocup/index.html' target='_blank' rel='noreferrer noopener'>試作</a>"
+      ],
+      "img": {
+        "main" :[
+          "image/works_05_img01.jpg"
+        ],
+        "process": [
+          ""
+        ]
+      },
+      "imgCaption": [
+        "<a class='works__detail__image-caption-link' href='dev/beerpoint_first_mocup/index.html'>一番最初の試作</a>のキャプチャー画像。"
+      ],
+      "imgAlt": [
+        "一番最初の試作のキャプチャー画像。"
+      ]
     }
   ]
 }
