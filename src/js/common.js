@@ -89,7 +89,7 @@
     }
     target.classList.add(activeClass);
     // Sort works
-    var works = document.querySelectorAll('.works__work'),
+    var works = document.querySelectorAll('.works__work:not(.works__work--empty)'),
         worksLen = works.length,
         worksHidden = 'works__work--hidden';
     for(var i = 0; i < worksLen; i++) {
@@ -98,26 +98,20 @@
     var targetType = target.getAttribute('data-type');
     for(var i = 0; i < worksLen; i++) {
       var targetWork = works[i],
-          targetWorkType = targetWork.getAttribute('data-type');
-      if(targetType != targetWorkType && targetType != 'all') {
+          targetWorkType = targetWork.children[0].getAttribute('data-type');
+      if(targetWorkType.indexOf(targetType) == -1 && targetType != 'all') {
         targetWork.classList.add(worksHidden);
       }
     }
   }
   // -- Works preview
   function worksPreview(index) {
-    // Set details
+    // Set detail title
     var work = worksData[index],
-        workDetail = document.querySelector('.works__detail'),
-        workContents = document.querySelector('.works__contents'),
-        workContentsHidden = 'works__contents--hidden',
-        workTitle = document.querySelector('.works__detail__title'),
-        workDescription = document.querySelector('.works__detail__description'),
-        workImages = document.querySelector('.works__detail__images');
+        workTitle = document.querySelector('.works__detail__title');
     workTitle.innerHTML = work.title;
-    workDescription.innerHTML = work.description;
     // Create detail images
-    var workImg = work.img,
+    var workImg = work.img.main,
         workImgLen = workImg.length,
         loadedWorkImgLen = 0;
     for(var i = 0; i < workImgLen; i++) {
@@ -126,7 +120,11 @@
         loadedWorkImgLen++;
       }
       worksDetailImage.classList.add('works__detail__image');
+      if(i == 0) {
+        worksDetailImage.classList.add('works__detail__image--first');
+      }
       worksDetailImage.alt = work.imgAlt[i];
+      var workImages = document.querySelector('.works__detail__images');
       if(typeof(workImg[i]) == 'string') {
         // Create image
         worksDetailImage.src = workImg[i];
@@ -136,11 +134,11 @@
         worksDetailImage.classList.add('works__detail__image--link');
         // Create link
         var worksDetailLink = document.createElement('a');
-        worksDetailLink.classList.add('works__detail__link');
+        worksDetailLink.classList.add('works__detail__image-link');
         worksDetailLink.classList.add(workImg[i][2]);
         worksDetailLink.href = workImg[i][1];
         worksDetailLink.target = '_blank';
-        worksDetailLink.rel = 'noopener noreferrer';
+        worksDetailLink.rel = 'noreferrer noopener';
         worksDetailLink.appendChild(worksDetailImage);
         workImages.appendChild(worksDetailLink);
       }
@@ -154,37 +152,56 @@
       }
     }
     // Set detail descriptions
-    var workDescriptions = document.querySelectorAll('.works__feature-description'),
+    var workDescriptions = document.querySelectorAll('.works__detail__description'),
         workDescriptionsLen = workDescriptions.length;
-    for(var i = 0; i < workDescriptionsLen; i++) {
-      var workDescription = work.descriptions[i];
-      workDescriptions[i].innerHTML = workDescription;
-    }
-    // Set other descriptions
-    var workOtherTitles = work.otherTitle,
-        workOtherContents = work.otherContent,
-        workOtherTitlesLen = workOtherTitles.length;
-    for(var i = 0; i < workOtherTitlesLen; i++) {
-      var targetTitle = workOtherTitles[i];
-      if(targetTitle != null) {
-        var targetContent = workOtherContents[i],
-            worksFeatures = document.querySelector('.works__features'),
-            worksFeature = document.createElement('tr'),
-            worksFeatureTitle = document.createElement('th'),
-            worksFeatureContent = document.createElement('td');
-        worksFeature.classList.add('works__feature');
-        worksFeature.classList.add('works__feature-other');
-        worksFeatureTitle.classList.add('works__feature-title');
-        worksFeatureTitle.innerHTML = targetTitle;
-        worksFeature.appendChild(worksFeatureTitle);
-        worksFeatureContent.classList.add('works__feature-description');
-        worksFeatureContent.innerHTML = targetContent;
-        worksFeature.appendChild(worksFeatureContent);
-        worksFeatures.appendChild(worksFeature);
+    for (var i = 0; i < workDescriptionsLen; i++) {
+      var targetDescription = work.description[i];
+      if(!Array.isArray(targetDescription)) {
+        workDescriptions[i].innerHTML = targetDescription;
       }
     }
+    // Set process description
+    var processDescription = workDescriptions[2],
+        processImg = work.img.process,
+        processImgLen = processImg.length;
+    for (var i = 0; i < processImgLen; i++) {
+      var workProcessDescription = work.description[2][i];
+      var processImgObj = document.createElement('img');
+      if(processImg[i]) {
+        processImgObj.src = processImg[i];
+        processImgObj.alt = 'プロセス補足イメージ';
+        processImgObj.classList.add('works__detail__process-image');
+      } else {
+        processImgObj.style.display = 'none';
+      }
+      processDescription.appendChild(processImgObj);
+      if(workProcessDescription) {
+        processDescription.innerHTML += workProcessDescription;
+      }
+    }
+    // Set process
+    var process = document.querySelector('.works__detail__process'),
+        workProcess = work.process,
+        workProcessLen = workProcess.length;
+    for (var i = 0; i < workProcessLen; i++) {
+      var processObj = document.createElement('li');
+      processObj.innerHTML = workProcess[i];
+      processObj.classList.add('works__detail__process-list');
+      if(workProcess[i].indexOf('<a') != -1) {
+        processObj.classList.add('works__detail__process-list--link');
+      }
+      if(i == workProcessLen - 1) {
+        processObj.classList.add('works__detail__process-list--last');
+      }
+      process.appendChild(processObj);
+    }
     // Hide work contents
+    var workContents = document.querySelector('.works__contents'),
+        workContentsHidden = 'works__contents--hidden',
+        workNav = document.querySelector('.works__nav'),
+        workNavHidden = 'works__nav--hidden';
     workContents.classList.add(workContentsHidden);
+    workNav.classList.add(workNavHidden);
     // Preview work loading
     var worksLoading = document.querySelector('.works__loading'),
         worksLoadingHidden = 'works__loading--hidden';
@@ -208,42 +225,22 @@
       }
       // Preview details
       worksLoading.classList.add(worksLoadingHidden);
-      var workDetailHidden = 'works__detail--hidden';
+      var workDetail = document.querySelector('.works__detail'),
+          workDetailHidden = 'works__detail--hidden';
       workDetail.classList.remove(workDetailHidden);
-      // Set works-detail width
-      var worksList = document.querySelector('.works__list'),
-          worksListWidth = worksList.offsetWidth,
-          currentWindowWidth = window.innerWidth;
-      workDetail.style.width = currentWindowWidth >= 900 ? getRemValue(worksListWidth) : "";
-      // Set text-box width
-      var workText = document.querySelector('.works__detail__text'),
-          workTextWidth = workText.offsetWidth,
-          workTextBox = document.querySelector('.works__detail__text-box');
-      workTextBox.style.width = currentWindowWidth >= 900 ? getRemValue(workTextWidth) : "";
       // Set close button
       var closeWorkButton = document.querySelector('.works__close');
-      closeWorkButton.style.width = currentWindowWidth >= 900 ? getRemValue(worksListWidth) : "";
       function closeWorkDetail() {
         workDetail.classList.add(workDetailHidden);
         workContents.classList.remove(workContentsHidden);
         // Remove detail contents
-        var removeImageContents = workImages.querySelectorAll('.works__detail__image:not(.works__detail__image--link), .works__detail__image-caption, .works__detail__link'),
-            removeImageContentsLen = removeImageContents.length;
-        for(var i = 0; i < removeImageContentsLen; i++) {
-          workImages.removeChild(removeImageContents[i]);
-        }
-        var worksFeatures = document.querySelector('.works__features'),
-            removeOtherFeatures = worksFeatures.querySelectorAll('.works__feature-other'),
-            removeOtherFeaturesLen = removeOtherFeatures.length;
-        for(var i = 0; i < removeOtherFeaturesLen; i++) {
-          worksFeatures.removeChild(removeOtherFeatures[i]);
-        }
+        workImages.innerHTML = '';
+        process.innerHTML = '';
+        processDescription.innerHTML = '';
+        // Update url hash
         updateUrlHash('works');
       }
       closeWorkButton.addEventListener('click', function() {
-        closeWorkDetail();
-      });
-      window.addEventListener('resize', function() {
         closeWorkDetail();
       });
       // Update URL hash
@@ -253,10 +250,6 @@
       // unlock Screen
       document.querySelector('body').removeChild(screenLock);
     }());
-  }
-  // -- Return rem value
-  function getRemValue(num) {
-    return num / 10 + 'rem';
   }
   // -- Update URL hash
   function updateUrlHash(targetHash) {
@@ -347,7 +340,7 @@
     moveNavigation(linkButtons, linkButtonsLen, linkButtons[1]);
   });
   // -- Click works sort button
-  var worksSortButtons = document.querySelectorAll('.works__sort'),
+  var worksSortButtons = document.querySelectorAll('.works__sort-button'),
       worksSortButtonsLen = worksSortButtons.length;
   for(var i = 0; i < worksSortButtonsLen; i++) {
     var target = worksSortButtons[i];
@@ -356,7 +349,7 @@
     });
   }
   // -- Click works preview button
-  var worksPreviewButtons = document.getElementsByClassName('works__work'),
+  var worksPreviewButtons = document.getElementsByClassName('works__work-button'),
       worksPreviewButtonsLen = worksPreviewButtons.length;
   for(var i = 0; i < worksPreviewButtonsLen; i++) {
     var target = worksPreviewButtons[i];
