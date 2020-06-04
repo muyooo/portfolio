@@ -346,6 +346,33 @@ button:active {
   bottom: 0;
   right: -1.6rem;
 }
+.works__detail__image-link {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+.works__detail__image-link--movie::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 2rem);
+  background: rgba(0,0,0,.6);
+  z-index: 10;
+}
+.works__detail__image-link--movie::after {
+  content: '';
+  width: 8.7rem;
+  height: 8.1rem;
+  background-image: url(../image/icon_movie.png);
+  background-size: cover;
+  position: absolute;
+  top: calc(50% + 2rem);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
 .works__detail__heading {
   font-size: 3rem;
   margin: 0 0 1.4rem;
