@@ -257,6 +257,12 @@
     targetHash = '#' + targetHash;
     location.hash = targetHash;
   }
+  // -- Get Page Url ID
+  function getPageUrlID(url) {
+    var pageUrlID = url.replace(/.*\/.*\#/, ''),
+        pageUrlID = pageUrlID.replace(/\?.*/, '');
+    return pageUrlID;
+  }
 
   /* ------------------------------ */
   /* First Preview Settings         */
@@ -293,8 +299,7 @@
   }
   // -- ID link page transition
   var pageUrl = location.href,
-      pageUrlID = pageUrl.replace(/.*\/.*\#/, ''),
-      pageUrlID = pageUrlID.replace(/\?.*/, ''),
+      pageUrlID = getPageUrlID(pageUrl),
       linkButtons = document.querySelectorAll('.main-nav__link-button'),
       linkButtonsLen = linkButtons.length;
   if(pageUrlID.indexOf('work') != -1) {
@@ -370,5 +375,38 @@
   var contactButton = document.querySelector('.about__contact');
   contactButton.addEventListener('click', function() {
     moveNavigation(linkButtons, linkButtonsLen, linkButtons[2]);
+  });
+  // -- Click policy button
+  var policyButton = document.querySelector('.main-nav__policy');
+  policyButton.addEventListener('click', function() {
+    var policy = document.querySelector('.policy'),
+        policyInvisible = 'policy--invisible',
+        policyHidden = 'policy--hidden',
+        pageUrl = location.href,
+        orgPageUrlID = getPageUrlID(pageUrl);
+    policy.classList.remove(policyHidden);
+    setTimeout(function() {
+      policy.classList.remove(policyInvisible);
+    }, 50);
+    updateUrlHash('policy');
+    var policyCloseButton = document.querySelector('.policy, .polisy__close'),
+        closeTrigger = false;
+    policyCloseButton.addEventListener('click', function(e) {
+      var targetClassText = String(e.target.classList);
+      if (targetClassText.indexOf('policy__') != -1 && targetClassText.indexOf('polisy__close') == -1) {
+        return false;
+      }
+      if(closeTrigger == true) {
+        return false;
+      }
+      closeTrigger = true;
+      updateUrlHash(orgPageUrlID);
+      policy.classList.add(policyInvisible);
+      var policyFadeoutTime = 500;
+      setTimeout(function() {
+        policy.classList.add(policyHidden);
+        closeTrigger = false;
+      }, policyFadeoutTime);
+    });
   });
 }());

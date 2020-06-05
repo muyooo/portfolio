@@ -13,6 +13,17 @@ body {
   font-weight: 500;
   overflow: hidden;
 }
+::-webkit-scrollbar {
+  width: 1.2rem;
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 1.2rem;
+  box-shadow: inset 0 0 0 .3rem #fff;
+}
 button {
   font-size: 1.4rem;
   font-family:
@@ -908,4 +919,108 @@ button:active {
 .about__detail-icon {
   width: 14.7rem;
   margin-bottom: 2rem;
+}
+
+/* -------------------------------------------------------------
+ * SITE POLICY
+ * ------------------------------------------------------------- */
+.policy {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, .8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: .5s;
+  cursor: pointer;
+}
+.policy--invisible {
+  opacity: 0;
+  transition: .5s;
+}
+.policy--hidden {
+  display: none;
+}
+.policy__contents {
+  background: #fff;
+  padding: 6rem 4rem;
+  width: 50vw;
+  height: 80vh;
+  overflow: auto;
+  color: #787878;
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+  cursor: default;
+}
+.policy__title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.policy__heading {
+  font-size: 2rem;
+  margin: 0 0 2rem;
+}
+.policy__subheading {
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+}
+.policy__content {
+  margin-bottom: 6rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+.policy__content--mb-half {
+  margin-bottom: 3rem;
+}
+.policy__content--last {
+  margin-bottom: 0;
+}
+.policy__lists {
+  margin: 1rem 0;
+}
+.policy__list {
+  position: relative;
+  padding-left: 2.5rem;
+}
+.policy__list::before {
+  content: "";
+  width: .7rem;
+  height: .1rem;
+  background: #787878;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1rem;
+  margin: auto 0;
+}
+.policy__link {
+  color: #88b5d3;
+  position: relative;
+  margin-right: 1.7rem;
+}
+.policy__link:hover {
+  opacity: .8;
+  transition: .1s;
+}
+.policy__link::after {
+  content: url(../image/icon_blank.svg);
+  position: absolute;
+  top: -.3rem;
+  right: -1.5rem;
+}
+.polisy__close {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 2rem;
 }
