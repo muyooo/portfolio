@@ -22,7 +22,7 @@
     var targetType = target.getAttribute('data-type'),
         activeClass = 'main-nav__link-button--active';
     // Remove all active classes and add active class to target
-    if(targetType == null) {
+    if(targetType == null || targetType == 'contact') {
       return false;
     }
     for(var i = 0; i < linkButtonsLen; i++) {
@@ -263,6 +263,40 @@
         pageUrlID = pageUrlID.replace(/\?.*/, '');
     return pageUrlID;
   }
+  // -- Open modal
+  function openModal(target) {
+    var targetQuery = '.' + target,
+        targetObj = document.querySelector(targetQuery),
+        targetInvisible = target + '--invisible',
+        targetHidden = target + '--hidden',
+        pageUrl = location.href,
+        orgPageUrlID = getPageUrlID(pageUrl);
+    targetObj.classList.remove(targetHidden);
+    setTimeout(function() {
+      targetObj.classList.remove(targetInvisible);
+    }, 50);
+    updateUrlHash(target);
+    var targetCloseButtonQuery = targetQuery + ',' + targetQuery + '__close',
+        targetCloseButton = document.querySelector(targetCloseButtonQuery),
+        closeTrigger = false;
+    targetCloseButton.addEventListener('click', function(e) {
+      var targetClassText = String(e.target.classList);
+      if (targetClassText.indexOf(target + '__') != -1 && targetClassText.indexOf(target + '__close') == -1) {
+        return false;
+      }
+      if(closeTrigger == true) {
+        return false;
+      }
+      closeTrigger = true;
+      updateUrlHash(orgPageUrlID);
+      targetObj.classList.add(targetInvisible);
+      var targetFadeoutTime = 500;
+      setTimeout(function() {
+        targetObj.classList.add(targetHidden);
+        closeTrigger = false;
+      }, targetFadeoutTime);
+    });
+  }
 
   /* ------------------------------ */
   /* First Preview Settings         */
@@ -371,42 +405,17 @@
       worksPreview(workNum);
     });
   }
-  // -- Click contact button from about
-  var contactButton = document.querySelector('.about__contact');
-  contactButton.addEventListener('click', function() {
-    moveNavigation(linkButtons, linkButtonsLen, linkButtons[2]);
-  });
+  // -- Click contact button
+  var contactButton =  document.querySelectorAll('.about__contact, .main-nav__link-button[data-type="contact"]'),
+      contactButtonLen = contactButton.length;
+  for(var i = 0; i < contactButtonLen; i++) {
+    contactButton[i].addEventListener('click', function() {
+      openModal('contact');
+    });
+  }
   // -- Click policy button
   var policyButton = document.querySelector('.main-nav__policy');
   policyButton.addEventListener('click', function() {
-    var policy = document.querySelector('.policy'),
-        policyInvisible = 'policy--invisible',
-        policyHidden = 'policy--hidden',
-        pageUrl = location.href,
-        orgPageUrlID = getPageUrlID(pageUrl);
-    policy.classList.remove(policyHidden);
-    setTimeout(function() {
-      policy.classList.remove(policyInvisible);
-    }, 50);
-    updateUrlHash('policy');
-    var policyCloseButton = document.querySelector('.policy, .polisy__close'),
-        closeTrigger = false;
-    policyCloseButton.addEventListener('click', function(e) {
-      var targetClassText = String(e.target.classList);
-      if (targetClassText.indexOf('policy__') != -1 && targetClassText.indexOf('polisy__close') == -1) {
-        return false;
-      }
-      if(closeTrigger == true) {
-        return false;
-      }
-      closeTrigger = true;
-      updateUrlHash(orgPageUrlID);
-      policy.classList.add(policyInvisible);
-      var policyFadeoutTime = 500;
-      setTimeout(function() {
-        policy.classList.add(policyHidden);
-        closeTrigger = false;
-      }, policyFadeoutTime);
-    });
+    openModal('policy');
   });
 }());

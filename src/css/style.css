@@ -922,6 +922,52 @@ button:active {
 }
 
 /* -------------------------------------------------------------
+ * CONTACT
+ * ------------------------------------------------------------- */
+.contact {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, .8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: .5s;
+  cursor: pointer;
+}
+.contact--invisible {
+  opacity: 0;
+  transition: .5s;
+}
+.contact--hidden {
+  display: none;
+}
+.contact__contents {
+  background: #fff;
+  padding: 4rem 4rem;
+  width: 50vw;
+  height: 80vh;
+  cursor: default;
+}
+.contact__iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.contact__close {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 2rem;
+}
+
+/* -------------------------------------------------------------
  * SITE POLICY
  * ------------------------------------------------------------- */
 .policy {
