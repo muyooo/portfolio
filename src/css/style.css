@@ -497,7 +497,19 @@ button:active {
 .works__loading__icon {
   width: 100%;
 }
-
+.works__back {
+  position: fixed;
+  top: 0;
+  margin-left: 2rem;
+  font-size: 1.6rem;
+  color: #88b5d3;
+  padding: 1.2rem 2rem;
+  background: rgba(255, 255, 255, .8);
+  z-index: 10;
+}
+.works__back--hidden {
+  display: none;
+}
 
 /* -------------------------------------------------------------
  * MAIN-NAV
@@ -919,6 +931,16 @@ button:active {
 .about__detail-icon {
   width: 14.7rem;
   margin-bottom: 2rem;
+}
+.about__back {
+  position: fixed;
+  top: 0;
+  right: 3rem;
+  font-size: 1.6rem;
+  color: #88b5d3;
+  padding: 1.2rem 2rem;
+  background: rgba(255, 255, 255, .8);
+  z-index: 10;
 }
 
 /* -------------------------------------------------------------

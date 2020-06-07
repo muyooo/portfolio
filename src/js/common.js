@@ -18,17 +18,24 @@
     alert("作品情報が読み込めませんでした。");
   }
   // -- Move Navigation
-  function moveNavigation(linkButtons, linkButtonsLen, target) {
-    var targetType = target.getAttribute('data-type'),
-        activeClass = 'main-nav__link-button--active';
-    // Remove all active classes and add active class to target
+  var linkButtons = document.querySelectorAll('.main-nav__link-button'),
+      linkButtonsLen = linkButtons.length;
+  function moveNavigation(targetType) {
+    // Return when without data-type or contact button
     if(targetType == null || targetType == 'contact') {
       return false;
     }
+    var activeClass = 'main-nav__link-button--active';
+    // Remove all active classes
     for(var i = 0; i < linkButtonsLen; i++) {
       linkButtons[i].classList.remove(activeClass);
     }
-    target.classList.add(activeClass);
+    // Set active class
+    if(targetType == 'works') {
+      linkButtons[0].classList.add(activeClass);
+    } else if (targetType == 'about') {
+      linkButtons[1].classList.add(activeClass);
+    }
     // Get contents query
     var mainContentClasses = ['works', 'main-nav', 'about'],
         mainContentClassesLen = mainContentClasses.length,
@@ -49,23 +56,27 @@
       targetSection.className = '';
       targetSection.classList.add(targetSectionClass);
     }
-    var emphasisClass = targetType + '--emphasis',
-        works = mainContents[0],
-        top = mainContents[1],
-        about = mainContents[2],
-        aboutSummary = document.querySelector('.about__summary'),
+    // Hide summaries
+    var aboutSummary = document.querySelector('.about__summary'),
         aboutSummaryHidden = 'about__summary--hidden',
-        worksList = document.querySelector('.works__list'),
-        worksListHidden = 'works__list--hidden',
-        aboutProfile = document.querySelector('.about__profile'),
-        aboutProfileHidden = 'about__profile--hidden',
         worksSummary = document.querySelector('.works__summary'),
         worksSummaryHidden = 'works__summary--hidden';
     worksSummary.classList.remove(worksSummaryHidden);
     aboutSummary.classList.remove(aboutSummaryHidden);
+    // Hide about profile
+    var aboutProfile = document.querySelector('.about__profile'),
+        aboutProfileHidden = 'about__profile--hidden';
     aboutProfile.classList.add(aboutProfileHidden);
+    // Hide works list
+    var worksList = document.querySelector('.works__list'),
+        worksListHidden = 'works__list--hidden';
     worksList.classList.add(worksListHidden);
+    // Update url hash
     updateUrlHash(targetType);
+    // Change content previewing
+    var emphasisClass = targetType + '--emphasis',
+        works = mainContents[0],
+        about = mainContents[2];
     if(targetType == 'works') {
       about.classList.add('about--hidden');
       worksSummary.classList.add(worksSummaryHidden);
@@ -199,9 +210,12 @@
     var workContents = document.querySelector('.works__contents'),
         workContentsHidden = 'works__contents--hidden',
         workNav = document.querySelector('.works__nav'),
-        workNavHidden = 'works__nav--hidden';
+        workNavHidden = 'works__nav--hidden',
+        workBackButton = document.querySelector('.works__back'),
+        workBackButtonHidden = 'works__back--hidden';
     workContents.classList.add(workContentsHidden);
     workNav.classList.add(workNavHidden);
+    workBackButton.classList.add(workBackButtonHidden);
     // Preview work loading
     var worksLoading = document.querySelector('.works__loading'),
         worksLoadingHidden = 'works__loading--hidden';
@@ -234,6 +248,7 @@
         workDetail.classList.add(workDetailHidden);
         workContents.classList.remove(workContentsHidden);
         workNav.classList.remove(workNavHidden);
+        workBackButton.classList.remove(workBackButtonHidden);
         // Remove detail contents
         workImages.innerHTML = '';
         process.innerHTML = '';
@@ -333,13 +348,11 @@
   }
   // -- ID link page transition
   var pageUrl = location.href,
-      pageUrlID = getPageUrlID(pageUrl),
-      linkButtons = document.querySelectorAll('.main-nav__link-button'),
-      linkButtonsLen = linkButtons.length;
+      pageUrlID = getPageUrlID(pageUrl);
   if(pageUrlID.indexOf('work') != -1) {
     // Works transition
     var workIdNum = Number( pageUrlID.replace(/work/, '') ) - 1;
-    moveNavigation(linkButtons, linkButtonsLen, linkButtons[0]);
+    moveNavigation('works');
     setTimeout(function() {
       if(!isNaN(workIdNum) && workIdNum != -1) {
         (function waitJsonLoading() {
@@ -355,7 +368,7 @@
     }, 600);
   } else if(pageUrlID.indexOf('about') != -1) {
     // About transition
-    moveNavigation(linkButtons, linkButtonsLen, linkButtons[1]);
+    moveNavigation('about');
   } else if(pageUrl.slice(-1) == '#') {
     var notIdUrl = pageUrl.replace(/\#/, '');
     location.href = notIdUrl;
@@ -368,16 +381,17 @@
   for(var i = 0; i < linkButtonsLen; i++) {
     var target = linkButtons[i];
     target.addEventListener('click', function(e) {
-      moveNavigation(linkButtons, linkButtonsLen, e.target);
+      var targetType = e.target.getAttribute('data-type');
+      moveNavigation(targetType);
     });
   }
   var worksSummaryLink = document.querySelector('.works__summary__link'),
       aboutSummaryLink = document.querySelector('.about__summary__link');
   worksSummaryLink.addEventListener('click', function() {
-    moveNavigation(linkButtons, linkButtonsLen, linkButtons[0]);
+    moveNavigation('works');
   });
   aboutSummaryLink.addEventListener('click', function() {
-    moveNavigation(linkButtons, linkButtonsLen, linkButtons[1]);
+    moveNavigation('about')
   });
   // -- Click works sort button
   var worksSortButtons = document.querySelectorAll('.works__sort-button'),
@@ -405,11 +419,19 @@
       worksPreview(workNum);
     });
   }
+  // -- Click contents back button
+  var contentsBackButtons = document.querySelectorAll('.about__back, .works__back, .main-nav__title'),
+      contentsBackButtonsLen = contentsBackButtons.length;
+  for(var i = 0; i < contentsBackButtonsLen; i++) {
+    contentsBackButtons[i].addEventListener('click', function() {
+      moveNavigation('top');
+    });
+  }
   // -- Click contact button
-  var contactButton =  document.querySelectorAll('.about__contact, .main-nav__link-button[data-type="contact"]'),
-      contactButtonLen = contactButton.length;
-  for(var i = 0; i < contactButtonLen; i++) {
-    contactButton[i].addEventListener('click', function() {
+  var contactButtons =  document.querySelectorAll('.about__contact, .main-nav__link-button[data-type="contact"]'),
+      contactButtonsLen = contactButtons.length;
+  for(var i = 0; i < contactButtonsLen; i++) {
+    contactButtons[i].addEventListener('click', function() {
       openModal('contact');
     });
   }
