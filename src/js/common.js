@@ -72,7 +72,11 @@
         worksListHidden = 'works__list--hidden';
     worksList.classList.add(worksListHidden);
     // Update url hash
-    updateUrlHash(targetType);
+    if(targetType == 'top') {
+      updateUrlHash('');
+    } else {
+      updateUrlHash(targetType);
+    }
     // Change content previewing
     var emphasisClass = targetType + '--emphasis',
         works = mainContents[0],
@@ -82,8 +86,6 @@
       worksSummary.classList.add(worksSummaryHidden);
       works.classList.add(emphasisClass);
       worksList.classList.remove(worksListHidden);
-    } else if(targetType == 'top') {
-      updateUrlHash('');
     } else if(targetType == 'about') {
       about.classList.add(emphasisClass);
       works.classList.add('works--hidden');
@@ -268,9 +270,11 @@
     }());
   }
   // -- Update URL hash
+  var hashUpdated = false;
   function updateUrlHash(targetHash) {
     targetHash = '#' + targetHash;
     location.hash = targetHash;
+    hashUpdated = true;
   }
   // -- Get Page Url ID
   function getPageUrlID(url) {
@@ -439,5 +443,17 @@
   var policyButton = document.querySelector('.main-nav__policy');
   policyButton.addEventListener('click', function() {
     openModal('policy');
+  });
+  // -- Click back or Forward Button
+  window.addEventListener('popstate', function() {
+    setTimeout(function() {
+      // Except hash updating
+      if(hashUpdated) {
+        hashUpdated = false;
+        return true;
+      }
+      // Back or Forward
+      location.reload();
+    }, 10);
   });
 }());
