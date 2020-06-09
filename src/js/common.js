@@ -377,6 +377,7 @@
     var notIdUrl = pageUrl.replace(/\#/, '');
     location.href = notIdUrl;
   }
+  hashUpdated = false;
 
   /* ------------------------------ */
   /* User Interaction               */
