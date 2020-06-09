@@ -111,7 +111,7 @@ button:active {
   padding: 4rem 2.8rem 0 0;
   justify-content: start;
   align-items: start;
-  transition: .7s, padding 0s;
+  transition: .7s, padding 0s, overflow 0s;
   overflow: scroll;
 }
 @media screen and (min-width: 102.5em) {
@@ -658,6 +658,21 @@ button:active {
   left: 4rem;
   transform: translateY(-50%);
 }
+.main-nav__link-list:hover .main-nav__link-button--active::after {
+  transform: rotate(45deg);
+  transition: .2s;
+}
+.main-nav__link-list:hover .main-nav__link-button--active::before {
+  content: "";
+  width: 1.2rem;
+  height: .1rem;
+  background: #88b5d3;
+  position: absolute;
+  top: 50%;
+  left: 4rem;
+  transform: translateY(-50%);
+  transform: rotate(-45deg);
+}
 .main-nav__link {
   color: #88b5d3;
   display: block;
@@ -725,6 +740,7 @@ button:active {
     padding: 0;
   }
 }
+.main-nav__contact,
 .main-nav__policy {
   font-size: 1rem;
   color: #88b5d3;

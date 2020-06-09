@@ -22,7 +22,7 @@
       linkButtonsLen = linkButtons.length;
   function moveNavigation(targetType) {
     // Return when without data-type or contact button
-    if(targetType == null || targetType == 'contact') {
+    if(targetType == null) {
       return false;
     }
     var activeClass = 'main-nav__link-button--active';
@@ -386,8 +386,13 @@
   for(var i = 0; i < linkButtonsLen; i++) {
     var target = linkButtons[i];
     target.addEventListener('click', function(e) {
-      var targetType = e.target.getAttribute('data-type');
-      moveNavigation(targetType);
+      var targetType = e.target.getAttribute('data-type'),
+          targetActive = String(e.target.classList).indexOf('--active') != -1 ? true : false;
+      if(targetActive) {
+        moveNavigation('top');
+      } else {
+        moveNavigation(targetType);
+      }
     });
   }
   var worksSummaryLink = document.querySelector('.works__summary__link'),
@@ -433,7 +438,7 @@
     });
   }
   // -- Click contact button
-  var contactButtons =  document.querySelectorAll('.about__contact, .main-nav__link-button[data-type="contact"]'),
+  var contactButtons =  document.querySelectorAll('.about__contact, .main-nav__contact'),
       contactButtonsLen = contactButtons.length;
   for(var i = 0; i < contactButtonsLen; i++) {
     contactButtons[i].addEventListener('click', function() {
