@@ -462,4 +462,24 @@
       location.reload();
     }, 10);
   });
+  // -- Click Primary work Button
+  var primaryWorkButtons = document.querySelectorAll('.works__summary__primary-work'),
+      primaryWorkButtonsLen = primaryWorkButtons.length;
+  for(var i = 0; i < primaryWorkButtonsLen; i++) {
+    primaryWorkButtons[i].addEventListener('click', function(e) {
+      moveNavigation('works');
+      var targetButton = e.target,
+          targetWorkNum;
+      if(String(targetButton.classList) == 'works__summary__primary-work') {
+        targetWorkNum = targetButton.getAttribute('data-num');
+      } else {
+        targetWorkNum = targetButton.parentNode.getAttribute('data-num');
+      }
+      var closeButton = document.querySelector('.works__close');
+      if(closeButton) {
+        closeButton.click();
+      }
+      worksPreview(targetWorkNum);
+    });
+  }
 }());
