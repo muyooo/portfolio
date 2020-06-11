@@ -21,77 +21,80 @@
   var linkButtons = document.querySelectorAll('.main-nav__link-button'),
       linkButtonsLen = linkButtons.length;
   function moveNavigation(targetType) {
-    // Return when without data-type or contact button
+    // Return when without data-type
     if(targetType == null) {
       return false;
     }
-    var activeClass = 'main-nav__link-button--active';
-    // Remove all active classes
-    for(var i = 0; i < linkButtonsLen; i++) {
-      linkButtons[i].classList.remove(activeClass);
-    }
-    // Set active class
-    if(targetType == 'works') {
-      linkButtons[0].classList.add(activeClass);
-    } else if (targetType == 'about') {
-      linkButtons[1].classList.add(activeClass);
-    }
-    // Get contents query
-    var mainContentClasses = ['works', 'main-nav', 'about'],
-        mainContentClassesLen = mainContentClasses.length,
-        mainContentQuery = '';
-    for(var i = 0; i < mainContentClassesLen; i++) {
-      mainContentQuery += '.' + mainContentClasses[i];
-      if(i != mainContentClassesLen - 1) {
-        mainContentQuery += ',';
+    clickCloseWorkDetailButton();
+    setTimeout(function() {
+      var activeClass = 'main-nav__link-button--active';
+      // Remove all active classes
+      for(var i = 0; i < linkButtonsLen; i++) {
+        linkButtons[i].classList.remove(activeClass);
       }
-    }
-    // Get section query
-    var mainContents = document.querySelectorAll(mainContentQuery),
-        mainContentsLen = mainContents.length;
-    // Reset contents class
-    for(var i = 0; i < mainContentsLen; i++) {
-      var targetSection = mainContents[i],
-          targetSectionClass = mainContentClasses[i];
-      targetSection.className = '';
-      targetSection.classList.add(targetSectionClass);
-    }
-    // Hide summaries
-    var aboutSummary = document.querySelector('.about__summary'),
-        aboutSummaryHidden = 'about__summary--hidden',
-        worksSummary = document.querySelector('.works__summary'),
-        worksSummaryHidden = 'works__summary--hidden';
-    worksSummary.classList.remove(worksSummaryHidden);
-    aboutSummary.classList.remove(aboutSummaryHidden);
-    // Hide about profile
-    var aboutProfile = document.querySelector('.about__profile'),
-        aboutProfileHidden = 'about__profile--hidden';
-    aboutProfile.classList.add(aboutProfileHidden);
-    // Hide works list
-    var worksList = document.querySelector('.works__list'),
-        worksListHidden = 'works__list--hidden';
-    worksList.classList.add(worksListHidden);
-    // Update url hash
-    if(targetType == 'top') {
-      updateUrlHash('');
-    } else {
-      updateUrlHash(targetType);
-    }
-    // Change content previewing
-    var emphasisClass = targetType + '--emphasis',
-        works = mainContents[0],
-        about = mainContents[2];
-    if(targetType == 'works') {
-      about.classList.add('about--hidden');
-      worksSummary.classList.add(worksSummaryHidden);
-      works.classList.add(emphasisClass);
-      worksList.classList.remove(worksListHidden);
-    } else if(targetType == 'about') {
-      about.classList.add(emphasisClass);
-      works.classList.add('works--hidden');
-      aboutSummary.classList.add(aboutSummaryHidden);
-      aboutProfile.classList.remove(aboutProfileHidden);
-    }
+      // Set active class
+      if(targetType == 'works') {
+        linkButtons[0].classList.add(activeClass);
+      } else if (targetType == 'about') {
+        linkButtons[1].classList.add(activeClass);
+      }
+      // Get contents query
+      var mainContentClasses = ['works', 'main-nav', 'about'],
+          mainContentClassesLen = mainContentClasses.length,
+          mainContentQuery = '';
+      for(var i = 0; i < mainContentClassesLen; i++) {
+        mainContentQuery += '.' + mainContentClasses[i];
+        if(i != mainContentClassesLen - 1) {
+          mainContentQuery += ',';
+        }
+      }
+      // Get section query
+      var mainContents = document.querySelectorAll(mainContentQuery),
+          mainContentsLen = mainContents.length;
+      // Reset contents class
+      for(var i = 0; i < mainContentsLen; i++) {
+        var targetSection = mainContents[i],
+            targetSectionClass = mainContentClasses[i];
+        targetSection.className = '';
+        targetSection.classList.add(targetSectionClass);
+      }
+      // Hide summaries
+      var aboutSummary = document.querySelector('.about__summary'),
+          aboutSummaryHidden = 'about__summary--hidden',
+          worksSummary = document.querySelector('.works__summary'),
+          worksSummaryHidden = 'works__summary--hidden';
+      worksSummary.classList.remove(worksSummaryHidden);
+      aboutSummary.classList.remove(aboutSummaryHidden);
+      // Hide about profile
+      var aboutProfile = document.querySelector('.about__profile'),
+          aboutProfileHidden = 'about__profile--hidden';
+      aboutProfile.classList.add(aboutProfileHidden);
+      // Hide works list
+      var worksList = document.querySelector('.works__list'),
+          worksListHidden = 'works__list--hidden';
+      worksList.classList.add(worksListHidden);
+      // Update url hash
+      if(targetType == 'top') {
+        updateUrlHash('');
+      } else {
+        updateUrlHash(targetType);
+      }
+      // Change content previewing
+      var emphasisClass = targetType + '--emphasis',
+          works = mainContents[0],
+          about = mainContents[2];
+      if(targetType == 'works') {
+        about.classList.add('about--hidden');
+        worksSummary.classList.add(worksSummaryHidden);
+        works.classList.add(emphasisClass);
+        worksList.classList.remove(worksListHidden);
+      } else if(targetType == 'about') {
+        about.classList.add(emphasisClass);
+        works.classList.add('works--hidden');
+        aboutSummary.classList.add(aboutSummaryHidden);
+        aboutProfile.classList.remove(aboutProfileHidden);
+      }
+    }, 10);
   }
   // -- Works sort
   function worksSort(worksSortButtons, worksSortButtonsLen, target) {
@@ -316,6 +319,13 @@
       }, targetFadeoutTime);
     });
   }
+  // -- Close work detail
+  function clickCloseWorkDetailButton() {
+    var closeButton = document.querySelector('.works__close');
+    if(closeButton) {
+      closeButton.click();
+    }
+  }
 
   /* ------------------------------ */
   /* First Preview Settings         */
@@ -475,10 +485,7 @@
       } else {
         targetWorkNum = targetButton.parentNode.getAttribute('data-num');
       }
-      var closeButton = document.querySelector('.works__close');
-      if(closeButton) {
-        closeButton.click();
-      }
+      clickCloseWorkDetailButton();
       worksPreview(targetWorkNum);
     });
   }
