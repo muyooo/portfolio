@@ -94,7 +94,8 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   opacity: 1;
   transition: .7s;
 }
@@ -112,7 +113,7 @@ button:active {
   justify-content: start;
   align-items: start;
   transition: .7s, padding 0s, overflow 0s;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 @media screen and (min-width: 102.5em) {
   .works--emphasis {
@@ -761,7 +762,8 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   opacity: 1;
   transition: .7s;
 }
