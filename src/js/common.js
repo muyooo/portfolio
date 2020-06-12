@@ -386,6 +386,16 @@
   } else if(pageUrl.slice(-1) == '#') {
     var notIdUrl = pageUrl.replace(/\#/, '');
     location.href = notIdUrl;
+  } else if(pageUrlID.indexOf('contact') != -1) {
+    setTimeout(function() {
+      var contactButton = document.querySelector('.main-nav__contact');
+      contactButton.click();
+    }, 50);
+  } else if(pageUrlID.indexOf('policy') != -1) {
+    setTimeout(function() {
+      var policyButton = document.querySelector('.main-nav__policy');
+      policyButton.click();
+    }, 50);
   }
   hashUpdated = false;
 
