@@ -63,7 +63,7 @@ button:active {
   display: none;
 }
 .loading__img {
-  width: 10vw;
+  width: 5vw;
 }
 @media screen and (max-width: 53.125em) {
   .loading__img {
@@ -509,7 +509,7 @@ button:active {
   display: none;
 }
 .works__loading__img {
-  width: 10%;
+  width: 5%;
 }
 @media screen and (max-width: 53.125em) {
   .works__loading__img {
