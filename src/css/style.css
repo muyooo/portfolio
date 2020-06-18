@@ -47,11 +47,6 @@ button:active {
   visibility: hidden;
   opacity: 0;
 }
-@media screen and (max-width: 53.125em) {
-  .wrapper {
-    flex-direction: column;
-  }
-}
 .loading {
   width: 100vw;
   height: 100vh;
@@ -64,11 +59,6 @@ button:active {
 }
 .loading__img {
   width: 5vw;
-}
-@media screen and (max-width: 53.125em) {
-  .loading__img {
-    width: 25vw;
-  }
 }
 .loading__icon {
   width: 100%;
@@ -99,14 +89,6 @@ button:active {
   opacity: 1;
   transition: .7s;
 }
-@media screen and (max-width: 53.125em) {
-  .works {
-    width: 100%;
-    max-width: 100%;
-    height: 39vh;
-    padding: 2.99850075vh;
-  }
-}
 .works--emphasis {
   width: 78.4%;
   padding: 4rem 2.8rem 0 0;
@@ -120,13 +102,6 @@ button:active {
     width: 100%;
   }
 }
-@media screen and (max-width: 53.125em) {
-  .works--emphasis {
-    width: 100%;
-    height: 78vh;
-    padding-top: 2.99850075vh;
-  }
-}
 .works--hidden {
   width: 4rem;
   padding: 0;
@@ -134,11 +109,6 @@ button:active {
   opacity: 0;
   overflow: hidden;
   transition: .7s;
-}
-@media screen and (max-width: 53.125em) {
-  .works--hidden {
-    height: 0;
-  }
 }
 .works__summary {
   text-align: center;
@@ -500,21 +470,11 @@ button:active {
   justify-content: center;
   align-items: center;
 }
-@media screen and (max-width: 53.125em) {
-  .works__loading {
-    height: 70.804497751vh;
-  }
-}
 .works__loading--hidden {
   display: none;
 }
 .works__loading__img {
   width: 5%;
-}
-@media screen and (max-width: 53.125em) {
-  .works__loading__img {
-    width: 25%;
-  }
 }
 .works__loading__icon {
   width: 100%;
@@ -551,16 +511,6 @@ button:active {
   flex-direction: column;
   justify-content: space-between;
 }
-@media screen and (max-width: 53.125em) {
-  .main-nav {
-    width: 100%;
-    max-width: 100%;
-    height: 22vh;
-    padding: 2.99850075vh 0 2.248875562vh;
-    margin: 0;
-    box-shadow: 0 0 .4rem 0 #c8c8c8;
-  }
-}
 .main-nav__title {
   width: calc(100% - 8rem);
   max-width: 19rem;
@@ -571,28 +521,8 @@ button:active {
   opacity: .8;
   transition: .1s;
 }
-@media screen and (max-width: 53.125em) {
-  .main-nav__titles {
-    display: flex;
-    margin-bottom: .449775112vh;
-    padding: 0 2.99850075vh;
-  }
-  .main-nav__title {
-    width: 10.344827586vh;
-    max-width: 10.344827586vh;
-    margin-bottom: 0;
-    display: inline-block;
-  }
-}
 .main-nav__logo {
   width: 100%;
-}
-@media screen and (max-width: 53.125em) {
-  .main-nav-sp__descriptions {
-    display: flex;
-    flex-direction: column;
-    margin-left: 2.3988006vh;
-  }
 }
 .main-nav__description {
   font-size: 1.4rem;
@@ -601,27 +531,6 @@ button:active {
   color: #787878;
   padding: 0 4rem;
   margin-bottom: 4rem;
-}
-@media screen and (max-width: 80em) {
-  .main-nav__description {
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
-    letter-spacing: .03rem;
-    line-height: 2rem;
-  }
-}
-@media screen and (max-width: 53.125em) {
-  .main-nav__description {
-    font-size: 1.649175412vh;
-    line-height: 1.5;
-    margin-bottom: 0;
-  }
-}
-@media screen and (max-width: 53.125em) {
-  .main-nav__link-lists {
-    display: flex;
-    justify-content: space-between;
-  }
 }
 .main-nav__link-list {
   font-size: 2rem;
@@ -633,41 +542,6 @@ button:active {
 .main-nav__link-list:hover {
   opacity: .8;
   transition: .1s;
-}
-@media screen and (max-width: 80em) {
-  .main-nav__link-list {
-    font-size: 1.8rem;
-    padding-bottom: .8rem;
-    margin-bottom: 2.5rem;
-  }
-}
-@media screen and (max-width: 53.125em) {
-  .main-nav__link-list {
-    width: calc(100vw / 3);
-    font-size: 1.949025487vh;
-    text-align: center;
-    padding: 2.248875562vh 0 2.99850075vh;
-    border: none;
-    margin-bottom: 0;
-    position: relative;
-  }
-  .main-nav__link-list:not(:last-of-type)::before {
-    content: "";
-    width: .1rem;
-    height: 5.097451274vh;
-    background: #88b5d3;
-    position: absolute;
-    top: 1.499250375vh;
-    right: 0;
-  }
-  .main-nav__link-list::after {
-    top: auto;
-    left: 0;
-    right: 0;
-    bottom: .59970015vh;
-    margin: 0 auto;
-    transform: rotate(90deg) scale(.8);
-  }
 }
 .main-nav__link-list--blank::after {
   content: url(../image/icon_blank.svg);
@@ -719,14 +593,6 @@ button:active {
   opacity: 1;
   transition: .3s;
 }
-@media screen and (max-width: 53.125em) {
-  .main-nav__icon-link-list {
-    top: 2.248875562vh;
-    bottom: auto;
-    left: auto;
-    right: 2.99850075vh;
-  }
-}
 .main-nav__icon-link-list--hidden {
   visibility: hidden;
   opacity: 0;
@@ -734,19 +600,6 @@ button:active {
 }
 .main-nav__icon-link:not(:first-of-type) {
   margin-left: 3rem;
-}
-@media screen and (max-width: 80em) {
-  .main-nav__icon-link:not(:first-of-type) {
-    margin-left: 1.8rem;
-  }
-}
-.main-nav__icon-link--github {width: 3.3rem;}
-.main-nav__icon-link--note {width: 2.8rem;}
-.main-nav__icon-link--blog {width: 3.2rem;}
-@media screen and (max-width: 80em) {
-  .main-nav__icon-link--github {width: 2.6rem;}
-  .main-nav__icon-link--note {width: 2.1rem;}
-  .main-nav__icon-link--blog {width: 2.5rem;}
 }
 .main-nav__icon-link__logo {
   width: 100%;
@@ -764,14 +617,6 @@ button:active {
   line-height: 1.5;
   letter-spacing: -.02rem;
   text-align: center;
-}
-@media screen and (max-width: 53.125em) {
-  .main-nav__footer {
-    left: auto;
-    right: .449775112vh;
-    bottom: .449775112vh;
-    padding: 0;
-  }
 }
 .main-nav__contact,
 .main-nav__policy {
@@ -804,14 +649,6 @@ button:active {
   opacity: 1;
   transition: .7s;
 }
-@media screen and (max-width: 53.125em) {
-  .about {
-    width: 100%;
-    max-width: 100%;
-    height: 39vh;
-    padding: 2.99850075vh;
-  }
-}
 .about--emphasis {
   width: 78.4%;
   padding: 4rem 4rem 0 0;
@@ -824,13 +661,6 @@ button:active {
     width: 100%;
   }
 }
-@media screen and (max-width: 53.125em) {
-  .about--emphasis {
-    width: 100%;
-    height: 78vh;
-    padding-top: 2.99850075vh;
-  }
-}
 .about--hidden {
   width: 4rem;
   padding: 0;
@@ -838,11 +668,6 @@ button:active {
   opacity: 0;
   overflow: hidden;
   transition: .7s;
-}
-@media screen and (max-width: 53.125em) {
-  .about--hidden {
-    height: 0;
-  }
 }
 .about__summary {
   text-align: center;
