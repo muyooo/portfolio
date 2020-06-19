@@ -145,6 +145,11 @@ button:active {
   justify-content: space-between;
   width: 37rem;
 }
+@media screen and (max-width: 63.75em) {
+  .works__summary__primary-works {
+    width: 100%;
+  }
+}
 .works__summary__primary-work {
   display: inline-block;
   width: 18rem;
@@ -551,6 +556,8 @@ button:active {
     width: 100%;
     max-width: 100%;
     height: 19.940029985vh;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 .main-nav__title {
@@ -558,6 +565,13 @@ button:active {
   max-width: 19rem;
   margin: 4rem auto;
   cursor: pointer;
+}
+@media screen and (max-width: 63.75em) {
+  .main-nav__title {
+    width: 14.992503748vh;
+    max-width: none;
+    margin: 2.248875562vh 0 0;
+  }
 }
 .main-nav__title:hover {
   opacity: .8;
@@ -574,12 +588,33 @@ button:active {
   padding: 0 4rem;
   margin-bottom: 4rem;
 }
+@media screen and (max-width: 63.75em) {
+  .main-nav__description {
+    display: none;
+  }
+}
+@media screen and (max-width: 63.75em) {
+  .main-nav__link-lists {
+    width: 33.883058471vh;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 2.99850075vh;
+  }
+}
 .main-nav__link-list {
   font-size: 2rem;
   text-align: center;
   position: relative;
   margin-bottom: 3rem;
   cursor: pointer;
+}
+@media screen and (max-width: 63.75em) {
+  .main-nav__link-list {
+    width: 16.941529235vh;
+    font-size: 2.3988006vh;
+    margin: 4.497751124vh 0 0;
+    display: flex;
+  }
 }
 .main-nav__link-list:hover {
   opacity: .8;
@@ -592,10 +627,22 @@ button:active {
   left: 4rem;
   transform: translateY(-50%);
 }
+@media screen and (max-width: 63.75em) {
+  .main-nav__link-list--blank::after {
+    position: relative;
+    left: .299850075vh;
+  }
+}
 .main-nav__link-button {
   width: 100%;
   font-size: 2rem;
   color: #88b5d3;
+}
+@media screen and (max-width: 63.75em) {
+  .main-nav__link-button {
+    font-size: 2.3988006vh;
+    text-align: left;
+  }
 }
 .main-nav__link-button--active::after {
   content: "";
@@ -625,6 +672,11 @@ button:active {
 .main-nav__link {
   color: #88b5d3;
   display: block;
+}
+@media screen and (max-width: 63.75em) {
+  .main-nav__link {
+    text-align: left;
+  }
 }
 .main-nav__icon-link-list {
   display: flex;
@@ -660,6 +712,29 @@ button:active {
   letter-spacing: -.02rem;
   text-align: center;
 }
+@media screen and (max-width: 63.75em) {
+  .main-nav__footer {
+    position: absolute;
+    bottom: 0;
+    margin-left: -14.992503748vh;
+    padding: 0 0 .749625187vh;
+    font-size: 1.274362819vh;
+    line-height: 1.79910045vh;
+    text-align: left;
+    letter-spacing: -.03rem;
+  }
+}
+.main-nav__footer--sp-visible {
+  display: none;
+}
+@media screen and (max-width: 63.75em) {
+  .main-nav__footer--sp-hidden {
+    display: none;
+  }
+  .main-nav__footer--sp-visible {
+    display: inline-block;
+  }
+}
 .main-nav__contact,
 .main-nav__policy {
   font-size: 1rem;
@@ -669,6 +744,12 @@ button:active {
     "Hiragino Sans",
     Meiryo,
     sans-serif;
+}
+@media screen and (max-width: 63.75em) {
+  .main-nav__contact,
+  .main-nav__policy {
+    font-size: 1.274362819vh;
+  }
 }
 .main-nav__contact:hover,
 .main-nav__policy:hover {
