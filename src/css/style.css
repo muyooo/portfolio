@@ -134,6 +134,12 @@ button:active {
   color: #787878;
   margin: 2rem 0 0;
 }
+@media screen and (max-width: 63.75em) {
+  .works__summary__subheading {
+    font-size: 3.148425787vh;
+    margin: 1.499250375vh 0 0;
+  }
+}
 .works__summary__primary-works {
   display: flex;
   justify-content: space-between;
@@ -145,12 +151,23 @@ button:active {
   padding: 4rem 0 2rem;
   color: #88b5d3;
 }
+@media screen and (max-width: 63.75em) {
+  .works__summary__primary-work {
+    font-size: 1.79910045vh;
+    padding: 2.99850075vh 1.124437781vh 1.499250375vh;
+  }
+}
 .works__summary__primary-work:hover {
   opacity: .8;
   transition: .1s;
 }
 .works__summary__primary-note {
   font-size: 1rem;
+}
+@media screen and (max-width: 63.75em) {
+  .works__summary__primary-note {
+    font-size: 1.274362819vh;
+  }
 }
 .works__summary__chart {
   width: 100%;
@@ -162,6 +179,12 @@ button:active {
   color: #88b5d3;
   padding: 2rem 0;
   margin: 0 auto;
+}
+@media screen and (max-width: 63.75em) {
+  .works__summary__link {
+    font-size: 2.3988006vh;
+    padding: 1.499250375vh 0;
+  }
 }
 .works__summary__link:hover {
   opacity: .8;
@@ -707,6 +730,12 @@ button:active {
   color: #787878;
   margin: 2rem 0 4.6rem;
 }
+@media screen and (max-width: 63.75em) {
+  .about__summary__heading {
+    font-size: 3.148425787vh;
+    margin: 1.499250375vh 0 3.448275862vh;
+  }
+}
 .about__summary__img {
   display: flex;
   justify-content: center;
@@ -718,6 +747,11 @@ button:active {
 .about__allow {
   width: 24.6rem;
   margin: 0 auto 3rem;
+}
+@media screen and (max-width: 63.75em) {
+  .about__allow {
+    margin: 0 auto 2.248875562vh;
+  }
 }
 .about__summary__chart {
   width: 100%;
@@ -734,6 +768,11 @@ button:active {
   width: 12rem;
   position: relative;
 }
+@media screen and (max-width: 63.75em) {
+  .about__summary__description {
+    font-size: 1.79910045vh;
+  }
+}
 .about__summary__description:not(.about__summary__description--last)::after {
   content: "";
   width: 2.5rem;
@@ -745,6 +784,11 @@ button:active {
 }
 .about__summary__description-note {
   font-size: 1.1rem;
+}
+@media screen and (max-width: 63.75em) {
+  .about__summary__description-note {
+    font-size: 1.274362819vh;
+  }
 }
 .about__summary__description--friend {
   margin-left: 4rem;
@@ -758,6 +802,12 @@ button:active {
   color: #88b5d3;
   padding: 2rem 0;
   margin: 0 auto;
+}
+@media screen and (max-width: 63.75em) {
+  .about__summary__link {
+    font-size: 2.3988006vh;
+    padding: 1.499250375vh 0;
+  }
 }
 .about__summary__link:hover {
   opacity: .8;
