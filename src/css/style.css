@@ -654,6 +654,11 @@ button:active {
   left: 4rem;
   transform: translateY(-50%);
 }
+@media screen and (max-width: 63.75em) {
+  .main-nav__link-button--active::after {
+    display: none;
+  }
+}
 .main-nav__link-list:hover .main-nav__link-button--active::after {
   transform: rotate(45deg);
   transition: .2s;
@@ -668,6 +673,11 @@ button:active {
   left: 4rem;
   transform: translateY(-50%);
   transform: rotate(-45deg);
+}
+@media screen and (max-width: 63.75em) {
+  .main-nav__link-button--active::before {
+    display: none;
+  }
 }
 .main-nav__link {
   color: #88b5d3;
