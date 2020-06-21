@@ -450,7 +450,7 @@
     });
   }
   // -- Click contents back button
-  var contentsBackButtons = document.querySelectorAll('.about__back, .works__back, .main-nav__title'),
+  var contentsBackButtons = document.querySelectorAll('.about__close, .works__back, .main-nav__title'),
       contentsBackButtonsLen = contentsBackButtons.length;
   for(var i = 0; i < contentsBackButtonsLen; i++) {
     contentsBackButtons[i].addEventListener('click', function() {

@@ -114,6 +114,13 @@ button:active {
     width: 100%;
   }
 }
+@media screen and (max-width: 63.75em) {
+  .works--emphasis {
+    width: 100%;
+    height: 81.859070465vh;
+    padding: 2.248875562vh 2.248875562vh 0;
+  }
+}
 .works--hidden {
   width: 4rem;
   padding: 0;
@@ -121,6 +128,12 @@ button:active {
   opacity: 0;
   overflow: hidden;
   transition: .7s;
+}
+@media screen and (max-width: 63.75em) {
+  .works--hidden {
+    width: 100%;
+    height: 0;
+  }
 }
 .works__summary {
   text-align: center;
@@ -558,6 +571,8 @@ button:active {
     height: 19.940029985vh;
     flex-direction: row;
     justify-content: center;
+    margin: 0;
+    z-index: 20;
   }
 }
 .main-nav__title {
@@ -731,7 +746,7 @@ button:active {
     font-size: 1.274362819vh;
     line-height: 1.79910045vh;
     text-align: left;
-    letter-spacing: -.03rem;
+    letter-spacing: 0;
   }
 }
 .main-nav__footer--sp-visible {
@@ -801,6 +816,13 @@ button:active {
     width: 100%;
   }
 }
+@media screen and (max-width: 63.75em) {
+  .about--emphasis {
+    width: 100%;
+    height: 81.859070465vh;
+    padding: 4.497751124vh 2.248875562vh 0;
+  }
+}
 .about--hidden {
   width: 4rem;
   padding: 0;
@@ -808,6 +830,12 @@ button:active {
   opacity: 0;
   overflow: hidden;
   transition: .7s;
+}
+@media screen and (max-width: 63.75em) {
+  .about--hidden {
+    width: 100%;
+    height: 0;
+  }
 }
 .about__summary {
   text-align: center;
@@ -914,11 +942,21 @@ button:active {
   display: flex;
   margin-bottom: 8rem;
 }
+@media screen and (max-width: 63.75em) {
+  .about__title {
+    margin-bottom: 8.995502249vh;
+  }
+}
 .about__image {
   width: 100%;
 }
 .about__character {
   width: 9.6rem;
+}
+@media screen and (max-width: 63.75em) {
+  .about__character {
+    width: 10.044977511vh;
+  }
 }
 .about__names {
   display: flex;
@@ -930,6 +968,12 @@ button:active {
   width: 14rem;
   margin-bottom: .7rem;
 }
+@media screen and (max-width: 63.75em) {
+  .about__logo-image {
+    width: 14.692653673vh;
+    margin-bottom: 1.499250375vh;
+  }
+}
 .about__logo {
   width: 100%;
 }
@@ -937,6 +981,12 @@ button:active {
   font-size: 3rem;
   color: #787878;
   letter-spacing: -.1rem;
+}
+@media screen and (max-width: 63.75em) {
+  .about__subtitle {
+    font-size: 3.5982009vh;
+    letter-spacing: -.15rem;
+  }
 }
 .about__details {
   display: flex;
@@ -947,13 +997,30 @@ button:active {
   width: calc(50% - 2rem);
   margin-bottom: 8rem;
 }
+@media screen and (max-width: 63.75em) {
+  .about__detail {
+    width: 100%;
+    margin-bottom: 8.995502249vh;
+  }
+}
 .about__detail--empty {
   visibility: hidden;
+}
+@media screen and (max-width: 63.75em) {
+  .about__detail--empty {
+    display: none;
+  }
 }
 .about__detail-title {
   font-size: 3rem;
   color: #787878;
   margin-bottom: 2rem;
+}
+@media screen and (max-width: 63.75em) {
+  .about__detail-title {
+    font-size: 3.5982009vh;
+    margin-bottom: 2.248875562vh;
+  }
 }
 .about__detail-title--kata {
   letter-spacing: -.3rem;
@@ -961,6 +1028,12 @@ button:active {
 .about__rpg-chart {
   width: 32.4rem;
   margin-bottom: 2rem;
+}
+@media screen and (max-width: 63.75em) {
+  .about__rpg-chart {
+    width: 100%;
+    margin-bottom: 2.248875562vh;
+  }
 }
 .about__description {
   font-size: 1.3rem;
@@ -973,12 +1046,27 @@ button:active {
   line-height: 1.8;
   letter-spacing: .05rem;
 }
+@media screen and (max-width: 63.75em) {
+  .about__description {
+    font-size: 1.79910045vh;
+  }
+}
 .about__note {
   font-size: 1.0rem;
+}
+@media screen and (max-width: 63.75em) {
+  .about__note {
+    font-size: 1.274362819vh;
+  }
 }
 .about__contact {
   font-size: 2.4rem;
   color: #88b5d3;
+}
+@media screen and (max-width: 63.75em) {
+  .about__contact {
+    font-size: 3.5982009vh;
+  }
 }
 .about__contact:hover {
   opacity: .8;
@@ -988,7 +1076,13 @@ button:active {
   width: 14.7rem;
   margin-bottom: 2rem;
 }
-.about__back {
+@media screen and (max-width: 63.75em) {
+  .about__detail-icon {
+    width: 22.03898051vh;
+    margin-bottom: 2.248875562vh;
+  }
+}
+.about__close {
   position: fixed;
   top: 0;
   right: 3rem;
@@ -998,7 +1092,14 @@ button:active {
   background: rgba(255, 255, 255, .8);
   z-index: 10;
 }
-.about__back:hover {
+@media screen and (max-width: 63.75em) {
+  .about__close {
+    font-size: 2.3988006vh;
+    top: 19.940029985vh;
+    right: 0;
+  }
+}
+.about__close:hover {
   opacity: .8;
   transition: .1s;
 }
