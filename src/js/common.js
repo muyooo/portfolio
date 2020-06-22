@@ -216,8 +216,8 @@
         workContentsHidden = 'works__contents--hidden',
         workNav = document.querySelector('.works__nav'),
         workNavHidden = 'works__nav--hidden',
-        workBackButton = document.querySelector('.works__back'),
-        workBackButtonHidden = 'works__back--hidden';
+        workBackButton = document.querySelector('.works__close'),
+        workBackButtonHidden = 'works__close--hidden';
     workContents.classList.add(workContentsHidden);
     workNav.classList.add(workNavHidden);
     workBackButton.classList.add(workBackButtonHidden);
@@ -248,7 +248,7 @@
           workDetailHidden = 'works__detail--hidden';
       workDetail.classList.remove(workDetailHidden);
       // Set close button
-      var closeWorkButton = document.querySelector('.works__close');
+      var closeWorkButton = document.querySelector('.works__detail__close');
       function closeWorkDetail() {
         workDetail.classList.add(workDetailHidden);
         workContents.classList.remove(workContentsHidden);
@@ -321,7 +321,7 @@
   }
   // -- Close work detail
   function clickCloseWorkDetailButton() {
-    var closeButton = document.querySelector('.works__close');
+    var closeButton = document.querySelector('.works__detail__close');
     if(closeButton) {
       closeButton.click();
     }
@@ -450,7 +450,7 @@
     });
   }
   // -- Click contents back button
-  var contentsBackButtons = document.querySelectorAll('.about__close, .works__back, .main-nav__title'),
+  var contentsBackButtons = document.querySelectorAll('.about__close, .works__close, .main-nav__title'),
       contentsBackButtonsLen = contentsBackButtons.length;
   for(var i = 0; i < contentsBackButtonsLen; i++) {
     contentsBackButtons[i].addEventListener('click', function() {
