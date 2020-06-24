@@ -124,8 +124,10 @@
   function worksPreview(index) {
     // Set detail title
     var work = worksData[index],
-        workTitle = document.querySelector('.works__detail__title');
+        workTitle = document.querySelector('.works__detail__title'),
+        workSPTitle = document.querySelector('.works__detail__sp-title');
     workTitle.innerHTML = work.title;
+    workSPTitle.innerHTML = work.title;
     // Create detail images
     var workImg = work.img.main,
         workImgLen = workImg.length,
@@ -169,6 +171,7 @@
     }
     // Set detail descriptions
     var workDescriptions = document.querySelectorAll('.works__detail__description'),
+        workSPDescription = document.querySelector('.works__detail__sp-description'),
         workDescriptionsLen = workDescriptions.length;
     for (var i = 0; i < workDescriptionsLen; i++) {
       var targetDescription = work.description[i];
@@ -176,6 +179,7 @@
         workDescriptions[i].innerHTML = targetDescription;
       }
     }
+    workSPDescription.innerHTML = work.description[0];
     // Set process description
     var processDescription = workDescriptions[2],
         processImg = work.img.process,
