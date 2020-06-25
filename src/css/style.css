@@ -65,6 +65,11 @@ button:active {
 .loading__img {
   width: 5vw;
 }
+@media screen and (max-width: 63.75em) {
+  .loading__img {
+    width: 12vw;
+  }
+}
 .loading__icon {
   width: 100%;
 }
@@ -703,6 +708,11 @@ button:active {
 }
 .works__loading__img {
   width: 5%;
+}
+@media screen and (max-width: 63.75em) {
+  .works__loading__img {
+    width: 12%;
+  }
 }
 .works__loading__icon {
   width: 100%;
