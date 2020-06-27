@@ -330,6 +330,15 @@
       closeButton.click();
     }
   }
+  function setInnerHeight() {
+    var ua = navigator.userAgent;
+    if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 || ua.indexOf('iPad') > 0) {
+      document.documentElement.style.setProperty(
+        '--inner-height',
+        window.innerHeight + 'px'
+      )
+    }
+  }
 
   /* ------------------------------ */
   /* First Preview Settings         */
@@ -402,6 +411,10 @@
     }, 50);
   }
   hashUpdated = false;
+  // Set outer height for smart phone
+  document.addEventListener('DOMContentLoaded', function() {
+    setInnerHeight();
+  });
 
   /* ------------------------------ */
   /* User Interaction               */
@@ -503,4 +516,8 @@
       worksPreview(targetWorkNum);
     });
   }
+  // -- Set outer height when window resize
+  window.addEventListener('resize', function() {
+    setInnerHeight();
+  });
 }());
