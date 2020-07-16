@@ -128,6 +128,9 @@
         workSPTitle = document.querySelector('.works__detail__sp-title');
     workTitle.innerHTML = work.title;
     workSPTitle.innerHTML = work.title;
+    // Store scroll top
+    var works = document.querySelector('.works'),
+        worksScrollTop = works.scrollTop;
     // Create detail images
     var workImg = work.img.main,
         workImgLen = workImg.length,
@@ -264,6 +267,8 @@
         processDescription.innerHTML = '';
         // Update url hash
         updateUrlHash('works');
+        // Restore scroll top
+        works.scrollTo(0, worksScrollTop);
       }
       closeWorkButton.addEventListener('click', function() {
         closeWorkDetail();
@@ -272,6 +277,8 @@
       var hashNum = index + 1,
           targetHash = 'work' + ('0' + hashNum).slice(-2);
       updateUrlHash(targetHash);
+      // Scroll browser top
+      works.scrollTo(0, 0);
       // unlock Screen
       document.querySelector('body').removeChild(screenLock);
     }());
