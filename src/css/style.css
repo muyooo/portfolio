@@ -1466,6 +1466,15 @@ button:active {
   top: -.3rem;
   right: -1.5rem;
 }
+.polisy__to-contact {
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+  font-size: 1.2rem;
+  color: #88b5d3;
+}
 .polisy__close {
   position: absolute;
   top: 0;

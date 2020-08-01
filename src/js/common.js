@@ -494,6 +494,14 @@
   policyButton.addEventListener('click', function() {
     openModal('policy');
   });
+  var policyToContactButton = document.querySelector('.polisy__to-contact');
+  policyToContactButton.addEventListener('click', function() {
+    var policyCloseButton = document.querySelector('.polisy__close');
+    policyCloseButton.click();
+    setTimeout(function() {
+      openModal('contact');
+    }, 50);
+  });
   // -- Click back or Forward Button
   window.addEventListener('popstate', function() {
     setTimeout(function() {
