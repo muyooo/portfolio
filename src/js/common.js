@@ -294,7 +294,11 @@
   function getPageUrlID(url) {
     var pageUrlID = url.replace(/.*\/.*\#/, ''),
         pageUrlID = pageUrlID.replace(/\?.*/, '');
-    return pageUrlID;
+    if (pageUrlID.indexOf('http') == -1) {
+      return pageUrlID;
+    } else {
+      return '';
+    }
   }
   // -- Open modal
   function openModal(target) {
@@ -321,7 +325,11 @@
         return false;
       }
       closeTrigger = true;
-      updateUrlHash(orgPageUrlID);
+      if (orgPageUrlID != target) {
+        updateUrlHash(orgPageUrlID);
+      } else {
+        updateUrlHash('');
+      }
       targetObj.classList.add(targetInvisible);
       var targetFadeoutTime = 500;
       setTimeout(function() {
