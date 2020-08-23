@@ -161,7 +161,7 @@
         [
           "1人で企画〜開発まで全てを担当してみようと初めた企画です。今は作業が止まっていますが、スピーディに完成させることを目標としてリサーチなどの工程を省き、要件定義や仕様書は最低限の内容で進めています。"
         ],
-        "企画<br>デザイン<br>コーディング・プログラミング",
+        "企画<br>デザイン<br>ディレクション",
         "Illustrator<br>Visual Studio Code<br>ターミナル（Git）",
         "2020/03〜開発中"
       ],
@@ -184,6 +184,89 @@
       ],
       "imgAlt": [
         "一番最初の試作のキャプチャー画像。"
+      ]
+    },
+    {
+      "title": "むょーサイト",
+      "description": [
+        "むょーの制作したWebやデザインを公開するサイトです。",
+        "Webに公開可能な制作物を記録したり、試作品を掲載できるようなサイトが欲しかったので制作しました。<br><br>詳しくは<a class='works__detail__description-link' href='https://note.com/muyooo/n/nbcbba6783569' target='_blank' rel='noreferrer noopener'>開発日誌</a>をご覧ください。",
+        [
+          "一度サイトを作り上げた後、いろいろな人の意見を取り入れた上でブラッシュアップしました。"
+        ],
+        "企画<br>デザイン<br>コーディング・プログラミング",
+        "Illustrator<br>Visual Studio Code<br>ターミナル（Git）",
+        "2020/04〜08"
+      ],
+      "process": [
+        "<a class='works__detail__process-link' href='https://note.com/muyooo/n/nbcbba6783569' target='_blank' rel='noreferrer noopener'>問題<br>提起</a>",
+        "<a class='works__detail__process-link' href='https://note.com/muyooo/n/n6d5e25320c80' target='_blank' rel='noreferrer noopener'>要件<br>定義</a>",
+        "試作",
+        "<a class='works__detail__process-link' href='https://note.com/muyooo/n/n2625503c3891' target='_blank' rel='noreferrer noopener'>他者<br>評価</a>",
+        "修正",
+        "本公開"
+      ],
+      "img": {
+        "main" :[
+          "image/works_06_img01.jpg",
+          "image/works_06_img02.jpg",
+          "image/works_06_img03.jpg",
+          "image/works_06_img04.jpg",
+          "image/works_06_img05.jpg"
+        ],
+        "process": [
+          ""
+        ]
+      },
+      "imgCaption": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "imgAlt": [
+        "トップページのイメージ画像",
+        "作品一覧ページのイメージ画像",
+        "作品詳細ページのイメージ画像",
+        "自己紹介ページのイメージ画像",
+        "サイトポリシーモーダルのイメージ画像"
+      ]
+    },
+    {
+      "title": "イチジクチラシ<span class='works__detail__title-note'>2020</span>",
+      "description": [
+        "実家のイチジク農家が、毎年イチジクを買ってくれる人や近所の人に、イチジク販売が始まることを伝えるチラシです。",
+        "実家のイチジク農家からデザイン依頼があったので制作しました。<br><br>ターゲットは40〜70代の女性が主なので、イチジクの写真を使ってわかりやすくしつつ、ワンポイントにかわいい要素を入れるデザインを目指しました。<br>前年に作成したイチジクのキャラクターを登場させ、共通イメージになるよう意識しています。",
+        [
+          "前年のチラシも担当していたので、一部情報は流用してスムーズに制作を進めました。"
+        ],
+        "デザイン<br>ディレクション",
+        "Illustrator",
+        "2020/08"
+      ],
+      "process": [
+        "ヒア<br>リング",
+        "デザ<br>イン",
+        "印刷<br>手配"
+      ],
+      "img": {
+        "main" :[
+          "image/works_07_img01.jpg",
+          "image/works_07_img02.jpg"
+        ],
+        "process": [
+          "",
+          ""
+        ]
+      },
+      "imgCaption": [
+        "",
+        ""
+      ],
+      "imgAlt": [
+        "イチジクチラシ2020表面デザイン",
+        "イチジクチラシ2020裏面デザイン"
       ]
     }
   ]
