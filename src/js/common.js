@@ -536,7 +536,7 @@
         targetWorkNum = targetButton.parentNode.getAttribute('data-num');
       }
       clickCloseWorkDetailButton();
-      worksPreview(targetWorkNum);
+      worksPreview(Number(targetWorkNum));
     });
   }
   // -- Set outer height when window resize
