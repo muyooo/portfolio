@@ -11,7 +11,9 @@
     } else if(agent.indexOf('edge') > -1) {
       return 'edge';
     } else if(agent.indexOf('android') > -1) {
-      return 'android';
+      if(agent.indexOf('mobile') == -1) {
+        return 'android tab';
+      }
     } else {
       return 'other';
     }
