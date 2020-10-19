@@ -17,6 +17,19 @@
   xhr.onerror = function() {
     alert("作品情報が読み込めませんでした。");
   }
+  // -- Check browser(IE or Edge or SmartPhone)
+  function checkBrowser() {
+    var agent = window.navigator.userAgent.toLowerCase();
+    if(agent.indexOf('msie') > -1 || agent.indexOf('trident/7') > -1) {
+      return 'ie';
+    } else if(agent.indexOf('edge') > -1) {
+      return 'edge';
+    } else if(agent.indexOf('android') > -1) {
+      return 'android';
+    } else {
+      return 'other';
+    }
+  }
   // -- Move Navigation
   var linkButtons = document.querySelectorAll('.main-nav__link-button'),
       linkButtonsLen = linkButtons.length;
@@ -268,7 +281,9 @@
         // Update url hash
         updateUrlHash('works');
         // Restore scroll top
-        works.scrollTo(0, worksScrollTop);
+        if (checkBrowser() == 'other') {
+          works.scrollTo(0, worksScrollTop);
+        }
       }
       closeWorkButton.addEventListener('click', function() {
         closeWorkDetail();
@@ -278,7 +293,9 @@
           targetHash = 'work' + ('0' + hashNum).slice(-2);
       updateUrlHash(targetHash);
       // Scroll browser top
-      works.scrollTo(0, 0);
+      if (checkBrowser() == 'other') {
+        works.scrollTo(0, 0);
+      }
       // unlock Screen
       document.querySelector('body').removeChild(screenLock);
     }());
