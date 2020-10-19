@@ -91,9 +91,9 @@
         "main" :[
           "image/works_03_img01.jpg",
           "image/works_03_img02.jpg",
-          ["http://img.youtube.com/vi/jCCkJzC_aBg/mqdefault.jpg","https://youtu.be/jCCkJzC_aBg","works__detail__image-link--movie"],
-          ["http://img.youtube.com/vi/Rbo54P33xOk/mqdefault.jpg","https://youtu.be/Rbo54P33xOk","works__detail__image-link--movie"],
-          ["http://img.youtube.com/vi/pQUVEnf0Dww/mqdefault.jpg","https://youtu.be/pQUVEnf0Dww","works__detail__image-link--movie"]
+          ["https://img.youtube.com/vi/jCCkJzC_aBg/mqdefault.jpg","https://youtu.be/jCCkJzC_aBg","works__detail__image-link--movie"],
+          ["https://img.youtube.com/vi/Rbo54P33xOk/mqdefault.jpg","https://youtu.be/Rbo54P33xOk","works__detail__image-link--movie"],
+          ["https://img.youtube.com/vi/pQUVEnf0Dww/mqdefault.jpg","https://youtu.be/pQUVEnf0Dww","works__detail__image-link--movie"]
         ],
         "process": [
           ""
