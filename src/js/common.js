@@ -3,20 +3,6 @@
   /* ------------------------------ */
   /* Functions                      */
   /* ------------------------------ */
-  // -- JSON loading
-  var xhr = new XMLHttpRequest(),
-      worksData,
-      worksLoadFlag = false;
-  xhr.open('GET', 'js/works.json');
-  xhr.responseType = 'json';
-  xhr.send();
-  xhr.onload = function() {
-    worksData = xhr.response.works;
-    worksLoadFlag = true;
-  }
-  xhr.onerror = function() {
-    alert("作品情報が読み込めませんでした。");
-  }
   // -- Check browser(IE or Edge or SmartPhone)
   function checkBrowser() {
     var agent = window.navigator.userAgent.toLowerCase();
@@ -28,6 +14,33 @@
       return 'android';
     } else {
       return 'other';
+    }
+  }
+  // -- JSON loading
+  var xhr = new XMLHttpRequest(),
+      worksData,
+      worksLoadFlag = false;
+  function checkReadyState() {
+    if ((xhr.readyState == 4) && (xhr.status == 200)){
+      worksData = JSON.parse(xhr.responseText).works;
+      worksLoadFlag = true;
+    }
+  }
+  if (checkBrowser() == 'ie') {
+    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    xhr.onreadystatechange = checkReadyState;
+    xhr.open('GET', 'js/works.json');
+    xhr.send(null);
+  } else {
+    xhr.open('GET', 'js/works.json');
+    xhr.responseType = 'json';
+    xhr.send();
+    xhr.onload = function() {
+      worksData = xhr.response.works;
+      worksLoadFlag = true;
+    }
+    xhr.onerror = function() {
+      alert("作品情報が読み込めませんでした。");
     }
   }
   // -- Move Navigation
