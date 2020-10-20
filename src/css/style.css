@@ -37,6 +37,12 @@ button {
     sans-serif;
   font-weight: 500;
 }
+/* Align font baseline for IE */
+@media all and (-ms-high-contrast: none) {
+  button {
+    line-height: normal;
+  }
+}
 button:active {
   border: none;
 }
