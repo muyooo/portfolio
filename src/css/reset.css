@@ -43,3 +43,8 @@ button {
 button:focus {
   outline: 0;
 }
+input textarea {
+  appearance: none;
+  border: none;
+  box-sizing: border-box;
+}
