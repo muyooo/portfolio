@@ -10,6 +10,11 @@
     sans-serif;
   padding: 2rem 0;
   color: #787878;
+  height: 99vh;
+  overflow-y: auto;
+}
+.form-container__form {
+  width: 80%;
 }
 .input-box {
   margin-bottom: 2rem;
@@ -22,7 +27,7 @@
   margin-bottom: .8rem;
 }
 .input-box__input {
-  width: 30rem;
+  width: 70%;
   padding: .7rem;
   font-size: 1.2rem;
   color: #787878;
@@ -30,7 +35,7 @@
   border: .1rem solid #c8c8c8;
 }
 .input-box__input--area {
-  width: 40rem;
+  width: 90%;
   height: 8rem;
   resize: none;
 }
